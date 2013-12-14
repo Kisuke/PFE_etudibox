@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PFE_etudibox.Models.Base;
 
 namespace PFE_etudibox.Controllers.Login
 {
@@ -13,6 +14,7 @@ namespace PFE_etudibox.Controllers.Login
 
         public ActionResult Index()
         {
+            DatabaseConnection db = new DatabaseConnection();
             return View();
         }
 
