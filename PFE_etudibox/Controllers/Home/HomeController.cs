@@ -4,17 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PFE_etudibox.Models.Base;
-using PFE_etudibox.Models.Login;
+using PFE_etudibox.Models.Home;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace PFE_etudibox.Controllers.Login
+namespace PFE_etudibox.Controllers.Home
 {
-    public class LoginController : Controller
+    public class HomeController : Controller
     {
         //
-        // GET: /Login/
+        // GET: /Menu/
 
         public ActionResult Index(string email, string password)
         {
@@ -33,7 +33,7 @@ namespace PFE_etudibox.Controllers.Login
 
         private void Connect(string email, string password)
         {
-            LoginModel lm = new LoginModel();
+            HomeModel lm = new HomeModel();
             //On se connecte à la base de données
             lm.Connect();
             //On vérifie si l'utilisateur et le mot de passe existent en bdd

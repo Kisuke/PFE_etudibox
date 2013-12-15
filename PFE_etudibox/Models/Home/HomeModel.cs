@@ -6,9 +6,9 @@ using System.Windows.Forms;
 using PFE_etudibox.Models.Base;
 using MySql.Data.MySqlClient;
 
-namespace PFE_etudibox.Models.Login
+namespace PFE_etudibox.Models.Home
 {
-    public class LoginModel
+    public class HomeModel
     {
         DatabaseConnection db;
 
