@@ -16,7 +16,7 @@ namespace PFE_etudibox
             routes.MapRoute(
                 name: "Index",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
