@@ -50,11 +50,11 @@ namespace PFE_etudibox.Models.Base
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        //MessageBox.Show("Cannot connect to server.  Contact administrator");
                         break;
 
                     case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
+                        //MessageBox.Show("Invalid username/password, please try again");
                         break;
                 }
                 return false;
@@ -80,9 +80,11 @@ namespace PFE_etudibox.Models.Base
 
         public String Connect(string query);
 
-        public String Query(string query)
+        public QueryResult Query(string query)
         {
-            String result = null;
+
+            QueryResult queryResult = null;
+            //String result = null;
             //open connection
             if (this.OpenConnection() == true)
             {
@@ -91,23 +93,23 @@ namespace PFE_etudibox.Models.Base
 
                 //Execute command
                 cmd.ExecuteNonQuery();
-
-                MySqlDataReader reader = cmd.ExecuteReader();
+                queryResult = new QueryResult(cmd.ExecuteReader());
+               
 
                 //
-                reader.Read();
+                //reader.Read();
                 
                 //get the value of column 1
-                result = reader.GetString(0);
+                //result = reader.GetString(0);
 
                 //
-                reader.Close();
+                //reader.Close();
 
                 //close connection
-                this.CloseConnection();
+                //this.CloseConnection();
 
             }
-                return result;
+                return queryResult;
             
         }
         //Backup
