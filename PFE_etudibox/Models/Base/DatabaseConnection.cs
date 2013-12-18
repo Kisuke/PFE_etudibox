@@ -77,11 +77,10 @@ namespace PFE_etudibox.Models.Base
         }
 
     //Insert statement
-<<<<<<< HEAD
-        public String Connect(string query)
-=======
+
+        public String Connect(string query);
+
         public String Query(string query)
->>>>>>> 68055a769ca2c6d2af3bc6701a32a16a8a79b182
         {
             String result = null;
             //open connection
