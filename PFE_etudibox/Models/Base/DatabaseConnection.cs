@@ -94,6 +94,7 @@ namespace PFE_etudibox.Models.Base
                 //Execute command
                 cmd.ExecuteNonQuery();
                 queryResult = new QueryResult(cmd.ExecuteReader());
+                queryResult.Initialize();
                
 
                 //
@@ -106,7 +107,7 @@ namespace PFE_etudibox.Models.Base
                 //reader.Close();
 
                 //close connection
-                //this.CloseConnection();
+                this.CloseConnection();
 
             }
                 return queryResult;
