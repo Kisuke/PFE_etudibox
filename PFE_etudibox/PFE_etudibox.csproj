@@ -41,16 +41,22 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.7.4\Assemblies\v4.0\MySql.Data.Entity.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Web, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -117,7 +123,6 @@
     <Compile Include="Controllers\BonPlan\BonPlanController.cs" />
     <Compile Include="Controllers\Inscription\InscriptionController.cs" />
     <Compile Include="Controllers\Login\LoginController.cs" />
-    <Compile Include="Controllers\Menu\MenuController.cs" />
     <Compile Include="Controllers\Tchat\TchatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -134,11 +139,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="CSS\Inscription.css" />
     <Content Include="Global.asax" />
     <Content Include="Views\BonPlan\Index.aspx" />
     <Content Include="Views\Inscription\Index.aspx" />
     <Content Include="Views\Login\Index.aspx" />
-    <Content Include="Views\Menu\Index.aspx" />
     <Content Include="Views\Tchat\Index.aspx" />
     <Content Include="Views\Troc\Index.aspx" />
     <Content Include="Web.config" />
@@ -154,12 +159,14 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Base\" />
     <Folder Include="Controllers\Troc\" />
-    <Folder Include="Models\Menu\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modele.Master" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -177,7 +184,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>14852</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:36846/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

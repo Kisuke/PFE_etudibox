@@ -14,7 +14,7 @@ namespace PFE_etudibox.Controllers.Login
     public class LoginController : Controller
     {
         //
-        // GET: /Login/
+        // GET: /Menu/
 
         public ActionResult Index(string email, string password)
         {

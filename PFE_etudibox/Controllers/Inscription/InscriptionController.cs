@@ -13,6 +13,7 @@ namespace PFE_etudibox.Controllers.Inscription
 
         public ActionResult Index()
         {
+            //Verification 
             return View();
         }
 

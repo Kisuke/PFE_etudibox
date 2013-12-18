@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <style>
+        body 
+        {
+            color: black; background-color: white;
+            font-size: 100.01%;
+            font-family: Helvetica,Arial,sans-serif;
+            margin: 0; padding: 1em;
+            min-width: 41em; 
+        }
+        ul#menu
+        {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+        }
+        #menu li
+        {
+            float:left;
+            width:16%;
+            
+        }
+        #menu a
+        {
+            display:block;
+            width:100%;
+            font-weight:bold;
+            color:#FFFFFF;
+            background-color:#98bf21;
+            text-align:center;
+            padding:4px;
+            text-decoration:none;
+            text-transform:uppercase;
+        }
+
+         #normal a:hover,a:active
+        {
+             color:black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="menu"> 
+            <li><%= Html.ActionLink("Accueil", "Index", "Home")%></li> 
+            <li><%= Html.ActionLink("Administratif", "About", "Administratif")%></li> 
+            <li><%= Html.ActionLink("Logement", "Index", "Logement")%></li> 
+            <li><%= Html.ActionLink("Bons Plans", "Index", "BonPlan")%></li> 
+            <li><%= Html.ActionLink("Trocs", "Index", "Troc")%></li> 
+            <li><%= Html.ActionLink("Tchat", "Index", "Tchat")%></li> 
+        </ul> 
+        </div>
+    <div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>
