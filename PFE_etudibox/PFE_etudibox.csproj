@@ -128,6 +128,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Base\DatabaseConnection.cs" />
+    <Compile Include="Models\Base\QueryResult.cs" />
     <Compile Include="Models\BonPlan\BonPlanModel.cs" />
     <Compile Include="Models\Inscription\InscriptionModel.cs" />
     <Compile Include="Models\Login\LoginModel.cs" />

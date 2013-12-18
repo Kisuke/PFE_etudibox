@@ -21,7 +21,7 @@ namespace PFE_etudibox.Models.Base
 
         public void Initialize()
         {
-            this.reader.Read();
+           /* this.reader.Read();
             this.FieldNumber = reader.FieldCount;
             if (this.FieldNumber > 0)
             {
@@ -36,13 +36,32 @@ namespace PFE_etudibox.Models.Base
                 }
             }
             this.initialized = true;
-            this.reader.Close();
+            this.reader.Close();*/
+             
+            this.reader.Read();
+            this.FieldNumber = reader.FieldCount;
+            if (this.FieldNumber > 0)
+            {
+                this.reader.Read();
+                
+                    List<Object> tempList = new List<Object>();
+                    for (int i = 0; i < this.FieldNumber; i++)
+                    {
+                        tempList.Add(reader.GetValue(i));
+                    }
+                    this.dataList.Add(tempList);
+                
+            }
+            this.initialized = true;
+            
         }
 
         public List<List<Object>> GetDataList()
         {
-            return new List<List<Object>>(this.dataList); //Retourne une copie de la liste
+            return this.dataList; //Retourne une copie de la liste
         }
+
+     
 
         public bool IsInitialized()
         {
@@ -52,6 +71,12 @@ namespace PFE_etudibox.Models.Base
         public int GetFieldCount()
         {
             return this.FieldNumber;
+        }
+
+        public Object GetValue(int row, int field)
+        {
+            return this.dataList[row][field];
+            
         }
 
     }

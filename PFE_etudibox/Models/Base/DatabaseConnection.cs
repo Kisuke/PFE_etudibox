@@ -76,9 +76,7 @@ namespace PFE_etudibox.Models.Base
             }
         }
 
-    //Insert statement
-
-        public String Connect(string query);
+         //Insert statement
 
         public QueryResult Query(string query)
         {
@@ -95,18 +93,7 @@ namespace PFE_etudibox.Models.Base
                 cmd.ExecuteNonQuery();
                 queryResult = new QueryResult(cmd.ExecuteReader());
                 queryResult.Initialize();
-               
-
-                //
-                //reader.Read();
-                
-                //get the value of column 1
-                //result = reader.GetString(0);
-
-                //
-                //reader.Close();
-
-                //close connection
+             
                 this.CloseConnection();
 
             }

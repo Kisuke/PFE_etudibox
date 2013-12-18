@@ -42,8 +42,7 @@ namespace PFE_etudibox.Controllers.Login
             {
                 Session["username"] = email;
                 
-                
-                Response.Redirect("Menu");
+                Response.Redirect("Login");
             }
             else
             {
