@@ -121,7 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BonPlan\BonPlanController.cs" />
+    <Compile Include="Controllers\Inscription\Member.cs" />
     <Compile Include="Controllers\Inscription\InscriptionController.cs" />
+    <Compile Include="Controllers\Login\Chiffrage.cs" />
     <Compile Include="Controllers\Login\LoginController.cs" />
     <Compile Include="Controllers\Tchat\TchatController.cs" />
     <Compile Include="Global.asax.cs">
@@ -141,7 +143,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="CSS\Inscription.css" />
+    <Content Include="etudiants.jpg" />
+    <Content Include="Etudiants2010.jpg" />
+    <Content Include="EtudiBox 3.png" />
     <Content Include="Global.asax" />
+    <Content Include="Students.PNG" />
     <Content Include="Views\BonPlan\Index.aspx" />
     <Content Include="Views\Inscription\Index.aspx" />
     <Content Include="Views\Login\Index.aspx" />

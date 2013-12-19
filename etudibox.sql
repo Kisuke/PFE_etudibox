@@ -28,8 +28,11 @@ CREATE TABLE `eb_user` (
   `id_eb_user` int(11) NOT NULL AUTO_INCREMENT,
   `eb_user_email` varchar(45) DEFAULT NULL,
   `eb_user_password` varchar(32) DEFAULT NULL,
+  `eb_firstname` varchar(45) DEFAULT NULL,
+  `eb_lastname` varchar(45) DEFAULT NULL,
+  `eb_login` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_eb_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +41,7 @@ CREATE TABLE `eb_user` (
 
 LOCK TABLES `eb_user` WRITE;
 /*!40000 ALTER TABLE `eb_user` DISABLE KEYS */;
-INSERT INTO `eb_user` VALUES (1,'test','098f6bcd4621d373cade4e832627b4f6');
+INSERT INTO `eb_user` VALUES (1,'test','098f6bcd4621d373cade4e832627b4f6',NULL,NULL,NULL),(2,'user','098f6bcd4621d373cade4e832627b4f6','Jules','Dupont',NULL),(4,'a@a','0cc175b9c0f1b6a831c399e269772661','a','a','a');
 /*!40000 ALTER TABLE `eb_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-15 21:42:19
+-- Dump completed on 2013-12-19 13:37:14

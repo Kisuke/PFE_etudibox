@@ -15,14 +15,14 @@
        
             <label for="email">Email:</label>
             <br />
-            <%= Html.TextBox("email") %>
+            <input ID="email" name="email" type="Email" required="required" role="textbox"/>
 
             <br />
             <br />
 
             <label for="password">Password:</label>
             <br />
-            <%= Html.Password("password") %>
+           <input name="password" type="Password"/>
 
             <br />
             <br />

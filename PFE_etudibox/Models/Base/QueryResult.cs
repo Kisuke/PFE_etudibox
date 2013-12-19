@@ -21,22 +21,6 @@ namespace PFE_etudibox.Models.Base
 
         public void Initialize()
         {
-           /* this.reader.Read();
-            this.FieldNumber = reader.FieldCount;
-            if (this.FieldNumber > 0)
-            {
-                while (this.reader.Read())
-                {
-                    List<Object> tempList = new List<Object>();
-                    for (int i = 0; i < this.FieldNumber; i++)
-                    {
-                        tempList.Add(reader.GetValue(i));
-                    }
-                    this.dataList.Add(tempList);
-                }
-            }
-            this.initialized = true;
-            this.reader.Close();*/
              
             this.reader.Read();
             this.FieldNumber = reader.FieldCount;

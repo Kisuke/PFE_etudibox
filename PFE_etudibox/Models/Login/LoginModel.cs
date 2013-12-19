@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Windows.Forms;
 using PFE_etudibox.Models.Base;
-using MySql.Data.MySqlClient;
 
 namespace PFE_etudibox.Models.Login
 {

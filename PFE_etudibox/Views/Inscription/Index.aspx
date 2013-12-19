@@ -1,31 +1,37 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Inscription.InscriptionModel>" %>
 
-<<<<<<< HEAD
+<script runat="server">
+    
+    
+</script>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div>
         <br />
-        Creation d&#39;un compte utilisateur
-        <form id="form1" runat="server">
-            <br />
-                <asp:Label ID="Label1" runat="server" Text="Nom"></asp:Label>
-                <asp:TextBox style="margin-left:142px" ID="TextBox1" runat="server"></asp:TextBox>
+        <h1>Creation d&#39;un compte utilisateur</h1>
+            <form id="form2" runat="server">
                 <br />
-                <asp:Label ID="Label2" runat="server" Text="Prénom"></asp:Label>
-                <asp:TextBox style="margin-left:121px" ID="TextBox2" runat="server"></asp:TextBox>
+                <label for="lastname">Nom</label>
+                <input style="margin-left: 142px" id="lastname" name="lastname" required="required" role="textbox" />
                 <br />
-                <asp:Label ID="Label3" runat="server" Text="Email"></asp:Label>
-                <asp:TextBox ID="TextBox3" runat="server" Height="16px" style="margin-left:136px" TextMode="Email"></asp:TextBox>
+                <label for="firstname">Prénom</label>
+                <input style="margin-left: 121px" id="fisrtname" name="firstname" />
                 <br />
-                <asp:Label ID="Label4" runat="server" Text="Mot de passe"></asp:Label>
-                <asp:TextBox ID="TextBox4" runat="server" style="margin-left:82px" TextMode="Password"></asp:TextBox>
+                <label for="login">Login</label>
+                <input style="margin-left: 137px" id="login" name="login" required="required" />
                 <br />
-                <asp:Label ID="Label5" runat="server" Text="Confirmer Mot de passe"></asp:Label>
-                <asp:TextBox ID="TextBox5" style="margin-left:10px" runat="server" TextMode="Password"></asp:TextBox>
-            
+                <label for="email">Email</label>
+                <input id="email" name="email" style="margin-left: 136px" type="Email" required="required" role="textbox" />
+                <br />
+                <label for="password">Mot de passe</label>
+                <input name="password" style="margin-left: 82px" type="Password" />
+                <br />
+                <label for="checkedpassword">Confirmer le mot de passe</label>
+                <input name="checkedpassword" style="margin-left: 10px" type="Password" />
+
                 <br />
                 <br />
-                <asp:Button ID="Button1" runat="server" Text="Valider" />
-        </form>
+                <input type="submit" value="Valider" />
+            </form>
     </div>
 </asp:Content>
