@@ -1,6 +1,15 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
 
 <!DOCTYPE html>
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+</script>
+
 
 <html>
 <head runat="server">
@@ -9,32 +18,60 @@
     <style>
         body 
         {
-            color: black; background-color: white;
-            font-size: 100.01%;
+            background-image: url('Etudiants2010.jpg');
+            height:200%;
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            color: black; 
+            font-size: 110.01%;
             font-family: Helvetica,Arial,sans-serif;
             margin: 0; padding: 1em;
             min-width: 41em; 
         }
+
+        #fond{
+            margin-left:20px;
+            position:absolute;
+            background-color:#f2ebeb;
+            filter:alpha(opacity=40); 
+            -moz-opacity:0.40; 
+            opacity: 0.40; 
+        }
+
+        #logo{
+            margin-left:20px;
+            position:absolute;
+        }
+
+        
+
         ul#menu
         {
             list-style-type:none;
-            margin:0;
+            margin-left:300px;
             padding:0;
             overflow:hidden;
         }
         #menu li
         {
+            border-style:solid;
+            border-width:thin;
+            border-color:#2a2929;
             float:left;
             width:16%;
-            
+            height: 40px;
+            line-height: 33px;
+            text-align: center;
+            vertical-align: middle;
         }
         #menu a
         {
+            
             display:block;
             width:100%;
             font-weight:bold;
-            color:#FFFFFF;
-            background-color:#98bf21;
+            color:#fbf0f0;
+            background-color:#24621d;
             text-align:center;
             padding:4px;
             text-decoration:none;
@@ -45,23 +82,79 @@
         {
              color:black;
         }
+
+         #login{
+            border-style:solid;
+            border-width:thin;
+            border-color:#2a2929;
+            margin-left:20px;
+            margin-top:50px;
+            position:absolute;
+            background-color:#f2ebeb;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85; 
+            text-align: center;
+         }
+         #circle 
+         {
+            width: 400px;
+            height: 400px;
+            background-color:#1eb018;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85;
+            -moz-border-radius: 400px;
+            -webkit-border-radius: 400px;
+            border-radius: 400px;
+            list-style-type:none;
+            margin-left:600px;
+            margin-top:100px;
+        }
+
+        
+         #circle p
+         {
+            height: 50px;
+            line-height:33px;
+            text-align:center;
+            vertical-align: middle; 
+            margin:auto;
+            margin-top:0px; 
+            font-family:verdana,arial,helvetica,sans-serif;
+            color:white;
+            font-size: 200.01%;
+            
+         }
         
     </style>
 </head>
 <body>
-    <div>
+        <div id="fond" style="height:86px; width:222px"></div>
+        <div id="logo">
+           <asp:Image ID="Image1" runat="server" Height="86px" ImageUrl="EtudiBox 3.png" Width="222px" />
+        </div>
+                    
+        <div>     
         <ul id="menu"> 
-            <li><%= Html.ActionLink("Accueil", "Index", "Home")%></li> 
-            <li><%= Html.ActionLink("Administratif", "About", "Administratif")%></li> 
+            <li><%= Html.ActionLink("Accueil", "Index", "Home")%></li>
+            <li><%= Html.ActionLink("Administratif", "About", "Administratif")%></li>
             <li><%= Html.ActionLink("Logement", "Index", "Logement")%></li> 
             <li><%= Html.ActionLink("Bons Plans", "Index", "BonPlan")%></li> 
             <li><%= Html.ActionLink("Trocs", "Index", "Troc")%></li> 
             <li><%= Html.ActionLink("Tchat", "Index", "Tchat")%></li> 
-        </ul> 
+        </ul>
         </div>
-    <div>
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
+  
+        <div id="login" style="height: 250px; width: 200px"> 
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <div id="circle">
+                 <span style="display: inline-block;height: 30%; width: 1px;"></span>
+               <p style="height: 241px; width: 325px">Bienvenue sur le site d'entraide et de partage étudiant</p>
+        </div>       
+    
 </body>
 </html>
