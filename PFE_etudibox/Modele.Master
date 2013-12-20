@@ -83,11 +83,11 @@
              color:black;
         }
 
-         #login{
+        #login{
             border-style:solid;
             border-width:thin;
             border-color:#2a2929;
-            margin-left:20px;
+            margin-left:3%;
             margin-top:50px;
             position:absolute;
             background-color:#f2ebeb;
@@ -101,20 +101,21 @@
             border-style:solid;
             border-width:thin;
             border-color:#2a2929;
-            margin-left:20px;
+            margin-left:24%;
             margin-top:50px;
             position:absolute;
             background-color:#f2ebeb;
             filter:alpha(opacity=85); 
             -moz-opacity:0.85; 
             opacity: 0.85; 
-            text-align: center;
+            text-align:center;
          }
 
          #circle 
          {
             width: 400px;
             height: 400px;
+            position:absolute;
             background-color:#1eb018;
             filter:alpha(opacity=85); 
             -moz-opacity:0.85; 
@@ -153,7 +154,7 @@
         <div>     
         <ul id="menu"> 
             <li><%= Html.ActionLink("Accueil", "Index", "Login")%></li>
-            <li><%= Html.ActionLink("Administratif", "About", "Administratif")%></li>
+            <li><%= Html.ActionLink("Administratif", "Index", "Administratif")%></li>
             <li><%= Html.ActionLink("Logement", "Index", "Logement")%></li> 
             <li><%= Html.ActionLink("Bons Plans", "Index", "BonPlan")%></li> 
             <li><%= Html.ActionLink("Trocs", "Index", "Troc")%></li> 
@@ -166,15 +167,16 @@
             </asp:ContentPlaceHolder>
         </div>
 
-        <div id="subscribe" style=" height: 250px; width: 200px"> 
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-        
+       
         <div id="circle">
                  <span style="display: inline-block;height: 30%; width: 1px;"></span>
                <p style="height: 241px; width: 325px">Bienvenue sur le site d'entraide et de partage étudiant</p>
         </div>       
     
+         <div id="subscribe"> 
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
 </body>
 </html>

@@ -2,32 +2,32 @@
 
 <script runat="server">
     
-    
+
 </script>
 
 <asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div>
         <br />
-        <h1>Creation d&#39;un compte utilisateur</h1>
+        <h1>Creation d&#39un compte utilisateur</h1>
             <form id="form2" runat="server">
                 <br />
                 <label for="lastname">Nom</label>
-                <input style="margin-left: 142px" id="lastname" name="lastname" required="required" role="textbox" />
+                <input style="margin-left: 73px; height: 22px; width: 160px;" id="lastname" name="lastname" required="required" role="textbox" />
                 <br />
                 <label for="firstname">Prénom</label>
-                <input style="margin-left: 121px" id="fisrtname" name="firstname" />
+                <input style="margin-left: 50px; height: 22px; width: 160px;" id="fisrtname" name="firstname" />
                 <br />
-                <label for="login">Login</label>
-                <input style="margin-left: 137px" id="login" name="login" required="required" />
+                <label for="identifiants">Identifiant</label>
+                <input id="identifiants" name="identifiants" style="margin-left: 36px; height: 22px; width: 159px;" required="required" />
                 <br />
                 <label for="email">Email</label>
-                <input id="email" name="email" style="margin-left: 136px" type="Email" required="required" role="textbox" />
+                <input id="email" name="email" style="margin-left: 66px; height: 22px; width: 160px;" type="Email" required="required" role="textbox" />
                 <br />
                 <label for="password">Mot de passe</label>
-                <input name="password" style="margin-left: 82px" type="Password" />
+                <input name="password" style="margin-left: 105px; height: 21px; width: 160px;" type="Password" />
                 <br />
                 <label for="checkedpassword">Confirmer le mot de passe</label>
-                <input name="checkedpassword" style="margin-left: 10px" type="Password" />
+                <input name="checkedpassword" style="margin-left: 10px; height: 22px; width: 160px;" type="Password" />
 
                 <br />
                 <br />
