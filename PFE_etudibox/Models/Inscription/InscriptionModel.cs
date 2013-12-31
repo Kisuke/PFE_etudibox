@@ -18,7 +18,7 @@ namespace PFE_etudibox.Models.Inscription
 
         public void Query(Member newMember)
         {
-            string query = "INSERT INTO etudibox.eb_user (`eb_user_email`, `eb_user_password`, `eb_firstname`, `eb_lastname`, `eb_login`) VALUES ('" + newMember.email + "', '" + newMember.password + "', '" + newMember.firstname + "', '" + newMember.lastname + "', '" + newMember.login + "');";
+            string query = "INSERT INTO etudibox.eb_user (`eb_user_email`, `eb_user_password`, `eb_user_firstname`, `eb_user_lastname`, `eb_user_login`) VALUES ('" + newMember.email + "', '" + newMember.password + "', '" + newMember.firstname + "', '" + newMember.lastname + "', '" + newMember.login + "');";
             QueryResult dataList = db.Query(query);
         }
     }

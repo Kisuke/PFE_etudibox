@@ -1,13 +1,19 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Administratif.AdministratifModel>" %>
 
 <script runat="server">
-    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if( Session["username"] == null)
+        {
+            Response.Redirect("Login");
+        }
+    }
     
 </script>
 
 
 
-<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <br />
         <h1>Facilite toi la vie !</h1>
@@ -15,71 +21,66 @@
     </div>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <style type="text/css">
-      ul.niveau1 ul {display: none; position: absolute; left: 144px; top: -1px; margin:0px; padding: 0px; border: 1px solid grey;}
-      li {list-style-type: none; position: relative; width: 140px; background-color: #E0E0E0; padding: 2px; margin: 0px}
-      ul.niveau2 li:hover {background-color: #FFFF70;}
-      li:hover ul.niveau2 {display: block}
-    </style>
+<asp:Content ID="Content2" ContentPlaceHolderID="LateralContent" runat="server">
     <div>
         <br />
         <h3>Catégories</h3>
 
         <ul class="niveau1">
-            <li>Aide
+            <li class="menuAdmin">Aide
                 <ul class="niveau2">
-                    <li>Bourses de l'Efrei</li>
-                    <li>Bourses régionales</li>
-                    <li>Bourses gouvernementales</li>
-                    <li>Autres types de bourses</li>
+                    <li class="menuAdmin">Bourses de l'Efrei</li>
+                    <li class="menuAdmin">Bourses régionales</li>
+                    <li class="menuAdmin">Bourses gouvernementales</li>
+                    <li class="menuAdmin">Autres types de bourses</li>
                 </ul>
             </li>
-            <li>Prêt
+            <li class="menuAdmin">Prêt
                 <ul class="niveau2">
-                    <li>Prêt étudiant par Banque</li>
-                    <li>Prêt Permis à 1 euros</li>
-                    <li>Autres prêts</li>
+                    <li class="menuAdmin">Prêt étudiant par Banque</li>
+                    <li class="menuAdmin">Prêt Permis à 1 euros</li>
+                    <li class="menuAdmin">Autres prêts</li>
                 </ul>
             </li>
+            <li class="menuAdmin">
                 Impôt
             </li>
-            <li>
+            <li class="menuAdmin">
                 Stage / VIE
                 <ul class="niveau2">
-                    <li>Site de l'Efrei</li>
-                    <li>Créer un profil sur Viadéo, Linkedin, Monster</li>
-                    <li>Vie Ubifrance, Civiweb</li>
+                    <li class="menuAdmin">Site de l'Efrei</li>
+                    <li class="menuAdmin">Créer un profil sur Viadéo, Linkedin, Monster</li>
+                    <li class="menuAdmin">Vie Ubifrance, Civiweb</li>
                 </ul>
             </li>
-            <li>
+            <li class="menuAdmin">
                 Transport
                 <ul class="niveau2">
-                    <li>Carte Imagine R</li>
-                    <li>Carte Velib</li>
-                    <li>Abonnement AutoLib</li>
-                    <li>SNCF Carte jeune</li>
+                    <li class="menuAdmin">Carte Imagine R</li>
+                    <li class="menuAdmin">Carte Velib</li>
+                    <li class="menuAdmin">Abonnement AutoLib</li>
+                    <li class="menuAdmin">SNCF Carte jeune</li>
                 </ul>
            </li>
-           <li>
+           <li class="menuAdmin">
                 Sécurité sociale
                 <ul class="niveau2">
-                  <li>SMEREP</li>
-                  <li>LMDE</li>
+                  <li class="menuAdmin">SMEREP</li>
+                  <li class="menuAdmin">LMDE</li>
                 </ul>
            </li>
-           <li>
+           <li class="menuAdmin">
                 Logement
                 <ul class="niveau2">
-                    <li>CAF/APL</li>
-                    <li>CROUS</li>
+                    <li class="menuAdmin">CAF/APL</li>
+                    <li class="menuAdmin">CROUS</li>
                 </ul>
             </li>
-            <li> 
+            <li class="menuAdmin"> 
                 Etudiant + de 25 ans
                 <ul class="niveau2">
-                    <li>Vos droits (CMU,RSA)</li>
-                    <li>Ce qui va changer</li>
+                    <li class="menuAdmin">Vos droits (CMU,RSA)</li>
+                    <li class="menuAdmin">Ce qui va changer</li>
                 </ul>
             </li>
         </ul>

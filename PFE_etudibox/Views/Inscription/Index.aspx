@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Inscription.InscriptionModel>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master"  Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Inscription.InscriptionModel>" %>
 
 <script runat="server">
     
 
 </script>
 
-<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <br />
         <h1>Creation d&#39un compte utilisateur</h1>
@@ -17,8 +17,8 @@
                 <label for="firstname">Prénom</label>
                 <input style="margin-left: 50px; height: 22px; width: 160px;" id="fisrtname" name="firstname" />
                 <br />
-                <label for="identifiants">Identifiant</label>
-                <input id="identifiants" name="identifiants" style="margin-left: 36px; height: 22px; width: 159px;" required="required" />
+                <label for="identifiant">Identifiant</label>
+                <input id="identifiant" name="identifiant" style="margin-left: 36px; height: 22px; width: 159px;" required="required" />
                 <br />
                 <label for="email">Email</label>
                 <input id="email" name="email" style="margin-left: 66px; height: 22px; width: 160px;" type="Email" required="required" role="textbox" />

@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <script runat="server">
 
-    protected void Page_Load(object sender, EventArgs e)
+    public void Signout_Click(object sender, EventArgs e)
     {
-
+        Session["username"] = null;
     }
 
 </script>
@@ -19,9 +19,9 @@
         body 
         {
             background-image: url('Etudiants2010.jpg');
-            height:200%;
             background-repeat:no-repeat;
             background-attachment: fixed;
+            background-size: cover; 
             color: black; 
             font-size: 110.01%;
             font-family: Helvetica,Arial,sans-serif;
@@ -29,21 +29,10 @@
             min-width: 41em; 
         }
 
-        #fond{
-            margin-left:20px;
-            position:absolute;
-            background-color:#f2ebeb;
-            filter:alpha(opacity=40); 
-            -moz-opacity:0.40; 
-            opacity: 0.40; 
-        }
-
         #logo{
             margin-left:20px;
             position:absolute;
-        }
-
-        
+        }   
 
         ul#menu
         {
@@ -66,7 +55,6 @@
         }
         #menu a
         {
-            
             display:block;
             width:100%;
             font-weight:bold;
@@ -83,11 +71,11 @@
              color:black;
         }
 
-        #login{
+        #sidebar{
             border-style:solid;
             border-width:thin;
             border-color:#2a2929;
-            margin-left:3%;
+            margin-left:1%;
             margin-top:50px;
             position:absolute;
             background-color:#f2ebeb;
@@ -97,11 +85,11 @@
             text-align: center;
          }
 
-         #subscribe{
+         #maincontent{
             border-style:solid;
             border-width:thin;
             border-color:#2a2929;
-            margin-left:24%;
+            margin-left:20%;
             margin-top:50px;
             position:absolute;
             background-color:#f2ebeb;
@@ -109,6 +97,7 @@
             -moz-opacity:0.85; 
             opacity: 0.85; 
             text-align:center;
+            z-index:-1;
          }
 
          #circle 
@@ -126,6 +115,7 @@
             list-style-type:none;
             margin-left:600px;
             margin-top:100px;
+            z-index:-1;
         }
 
         
@@ -140,13 +130,17 @@
             font-family:verdana,arial,helvetica,sans-serif;
             color:white;
             font-size: 200.01%;
-            
+            z-index:-1;
          }
-        
+            
+         ul.niveau1 ul {display: none; position: absolute; left: 144px; top: -1px; margin:0px; padding: 0px; border: 1px solid grey;}
+         li.menuAdmin {list-style-type: none; position: relative; background-color: #f2ebeb; width: 140px; padding: 2px; margin: 0px}
+         ul.niveau2 li:hover {background-color: #3EDA4D;}
+         li.menuAdmin:hover ul.niveau2 {display: block}
     </style>
 </head>
 <body>
-        <div id="fond" style="height:86px; width:222px"></div>
+       
         <div id="logo">
            <asp:Image ID="Image1" runat="server" Height="86px" ImageUrl="EtudiBox 3.png" Width="222px" />
         </div>
@@ -161,20 +155,28 @@
             <li><%= Html.ActionLink("Tchat", "Index", "Tchat")%></li> 
         </ul>
         </div>
-  
-        <div id="login" style="height: 250px; width: 200px"> 
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+     
+        <div id="sidebar" style="height: 76%; width: 15%">
+             <%  if (Session["username"] != null)
+             { %>
+                <form id="form2" runat="server" action="/Signout">
+                    <br />
+                    <asp:Button ID="Logout" runat="server" Text="Se déconnecter" />
+                </form>
+           <% } %>
+            <asp:ContentPlaceHolder ID="LateralContent" runat="server">
+                
             </asp:ContentPlaceHolder>
         </div>
 
        
         <div id="circle">
-                 <span style="display: inline-block;height: 30%; width: 1px;"></span>
-               <p style="height: 241px; width: 325px">Bienvenue sur le site d'entraide et de partage étudiant</p>
+                    <span style="display: inline-block;height: 30%; width: 1px;"></span>
+                <p style="height: 241px; width: 325px">Bienvenue sur le site d'entraide et de partage étudiant</p>
         </div>       
     
-         <div id="subscribe"> 
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            <div id="maincontent" style=" height: 76%; width: 76% "> 
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
 

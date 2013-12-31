@@ -1,40 +1,50 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Login.LoginModel>" %>
 
 <script runat="server">
-    
     protected void Page_Load(object sender, EventArgs e)
     {
+        var username = Session["username"];
+    }
 
+    protected void Logout_Click()
+    {
+        Session["username"] = null;
     }
     
 </script>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
-        <div>
-            <br />
-            <% using (Html.BeginForm())
-	            { %>
+<asp:Content ID="Content1" ContentPlaceHolderID="LateralContent" runat="server">
+    <%  if (Session["username"] == null)
+       { %>
+        <div id="login">
+            <form id="form1" runat="server">
+                <div>
+                    <br />
+                    <% using (Html.BeginForm())
+	                    { %>
        
-            <label for="email">Email:</label>
-            <br />
-            <input ID="email" name="email" type="Email" required="required" role="textbox"/>
+                    <label for="email">Email:</label>
+                    <br />
+                    <input ID="email" name="email" type="Email" required="required" role="textbox"/>
 
-            <br />
-            <br />
+                    <br />
+                    <br />
 
-            <label for="password">Password:</label>
-            <br />
-           <input name="password" type="Password"/>
+                    <label for="password">Password:</label>
+                    <br />
+                   <input name="password" type="Password" required="required" />
 
-            <br />
-            <br />
+                    <br />
+                    <br />
 
-            <input type="submit" value="Log in" />
-            <% } %>
+                    <input type="submit" value="Se connecter"  />
+                    <% } %>
+                    <br />
+                </div>
+            </form>
             <br />
+            <a href="Inscription">Pas encore de compte ?</a>
         </div>
-    </form>
-    <a href="Inscription">Pas encore de compte ?</a>
+    <%} %>
 </asp:Content>

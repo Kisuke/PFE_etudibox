@@ -7,6 +7,7 @@ namespace PFE_etudibox.Controllers.Inscription
 {
     public class Member
     {
+        private String user_id { get; set; }
         public String login { get; set; }
         public String lastname { get; set; }
         public String firstname { get; set; }
@@ -21,5 +22,14 @@ namespace PFE_etudibox.Controllers.Inscription
             this.email = email;
             this.password = password;
         }
+
+        public Member(string user_id, string lastname, string firstname)
+        {
+            // TODO: Complete member initialization
+            this.user_id = user_id;
+            this.lastname = lastname;
+            this.firstname = firstname;
+        }
+
     }
 }

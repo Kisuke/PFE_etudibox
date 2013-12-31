@@ -13,9 +13,9 @@ namespace PFE_etudibox.Controllers.Inscription
         //
         // GET: /Inscription/
 
-        public ActionResult Index(string login, string firstname, string lastname, string email, string password, string checkedpassword)
+        public ActionResult Index(string identifiant, string firstname, string lastname, string email, string password, string checkedpassword)
             {
-                if (login !=  null && firstname != null  && email != null && password != null && checkedpassword != null)
+                if (identifiant !=  null && firstname != null  && email != null && password != null && checkedpassword != null)
                 {
                     //Chiffrage du mot de passe et de la confirmation
                     Chiffrage md5 = new Chiffrage();
@@ -26,7 +26,7 @@ namespace PFE_etudibox.Controllers.Inscription
                     if (password.Equals(checkedpassword))
                     {
                         //Création d'un membre
-                        Member member = new Member(login, lastname, login, email, password);
+                        Member member = new Member(firstname, lastname, identifiant, email, password);
 
                         //Appel du InscriptionModel 
                         InscriptionModel im = new InscriptionModel();

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Windows.Forms;
 
-namespace PFE_etudibox.Controllers.Menu
+namespace PFE_etudibox.Controllers.Signout
 {
-    public class MenuController : Controller
+    public class SignoutController : Controller
     {
         //
-        // GET: /Menu/
+        // GET: /Signout/
 
         public ActionResult Index()
         {
-            MessageBox.Show("Bienvenue " + Session["username"].ToString());
+            Session["username"] = null;
+            Response.Redirect("Login");
             return View();
         }
 

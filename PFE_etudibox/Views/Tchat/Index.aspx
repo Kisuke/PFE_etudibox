@@ -1,15 +1,22 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Tchat.TchatModel>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Tchat.TchatModel>" %>
 
-<!DOCTYPE html>
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["username"] == null)
+        {
+            Response.Redirect("Login");
+        }
+    }
+    
+</script>
 
-<html>
-<head runat="server">
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
+<asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
     <div>
+        <br />
+        <h1>Tchat</h1>
         
     </div>
-</body>
-</html>
+</asp:Content>
+
+
