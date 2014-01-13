@@ -15,137 +15,18 @@
 <head id="Head1" runat="server">
     <meta name="viewport" content="width=device-width" />
     <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <asp:ContentPlaceHolder ID="Stylesheets" runat="server">
+        <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    </asp:ContentPlaceHolder>
     <style>
-        body 
-        {
-            background-image: url('Etudiants2010.jpg');
-            background-repeat:no-repeat;
-            background-attachment: fixed;
-            background-size: cover; 
-            color: black; 
-            font-size: 110.01%;
-            font-family: Helvetica,Arial,sans-serif;
-            margin: 0; padding: 1em;
-            min-width: 41em; 
-        }
-
-        #logo{
-            margin-left:20px;
-            position:absolute;
-        }   
-
-        ul#menu
-        {
-            list-style-type:none;
-            margin-left:300px;
-            padding:0;
-            overflow:hidden;
-        }
-        #menu li
-        {
-            border-style:solid;
-            border-width:thin;
-            border-color:#2a2929;
-            float:left;
-            width:16%;
-            height: 40px;
-            line-height: 33px;
-            text-align: center;
-            vertical-align: middle;
-        }
-        #menu a
-        {
-            display:block;
-            width:100%;
-            font-weight:bold;
-            color:#fbf0f0;
-            background-color:#24621d;
-            text-align:center;
-            padding:4px;
-            text-decoration:none;
-            text-transform:uppercase;
-        }
-
-         #normal a:hover,a:active
-        {
-             color:black;
-        }
-
-        #sidebar{
-            border-style:solid;
-            border-width:thin;
-            border-color:#2a2929;
-            margin-left:1%;
-            margin-top:50px;
-            position:absolute;
-            background-color:#f2ebeb;
-            filter:alpha(opacity=85); 
-            -moz-opacity:0.85; 
-            opacity: 0.85; 
-            text-align: center;
-         }
-
-         #maincontent{
-            border-style:solid;
-            border-width:thin;
-            border-color:#2a2929;
-            margin-left:20%;
-            margin-top:50px;
-            position:absolute;
-            background-color:#f2ebeb;
-            filter:alpha(opacity=85); 
-            -moz-opacity:0.85; 
-            opacity: 0.85; 
-            text-align:center;
-            z-index:-1;
-         }
-
-         #circle 
-         {
-            width: 400px;
-            height: 400px;
-            position:absolute;
-            background-color:#1eb018;
-            filter:alpha(opacity=85); 
-            -moz-opacity:0.85; 
-            opacity: 0.85;
-            -moz-border-radius: 400px;
-            -webkit-border-radius: 400px;
-            border-radius: 400px;
-            list-style-type:none;
-            margin-left:600px;
-            margin-top:100px;
-            z-index:-1;
-        }
-
         
-         #circle p
-         {
-            height: 50px;
-            line-height:33px;
-            text-align:center;
-            vertical-align: middle; 
-            margin:auto;
-            margin-top:0px; 
-            font-family:verdana,arial,helvetica,sans-serif;
-            color:white;
-            font-size: 200.01%;
-            z-index:-1;
-         }
-            
-         ul.niveau1 ul {display: none; position: absolute; left: 144px; top: -1px; margin:0px; padding: 0px; border: 1px solid grey;}
-         li.menuAdmin {list-style-type: none; position: relative; background-color: #f2ebeb; width: 140px; padding: 2px; margin: 0px}
-         ul.niveau2 li:hover {background-color: #3EDA4D;}
-         li.menuAdmin:hover ul.niveau2 {display: block}
     </style>
 </head>
-<body>
-       
-        <div id="logo">
-           <asp:Image ID="Image1" runat="server" Height="86px" ImageUrl="EtudiBox 3.png" Width="222px" />
-        </div>
-                    
-        <div>     
+<body> 
+    <div id="logo">
+        <asp:Image ID="Image1" runat="server" Height="86px" ImageUrl="Images/EtudiBox 3.png" Width="222px" />
+    </div>         
+    <div id="horizontalbar">     
         <ul id="menu"> 
             <li><%= Html.ActionLink("Accueil", "Index", "Login")%></li>
             <li><%= Html.ActionLink("Administratif", "Index", "Administratif")%></li>
@@ -154,31 +35,31 @@
             <li><%= Html.ActionLink("Trocs", "Index", "Troc")%></li> 
             <li><%= Html.ActionLink("Tchat", "Index", "Tchat")%></li> 
         </ul>
-        </div>
+    </div>
      
-        <div id="sidebar" style="height: 76%; width: 15%">
-             <%  if (Session["username"] != null)
-             { %>
-                <form id="form2" runat="server" action="/Signout">
-                    <br />
-                    <asp:Button ID="Logout" runat="server" Text="Se déconnecter" />
-                </form>
-           <% } %>
-            <asp:ContentPlaceHolder ID="LateralContent" runat="server">
+    <div id="sidebar" style="height: 76%; background-color: rgba(242, 242, 235, .85); width: 15%">
+            <%  if (Session["username"] != null)
+            { %>
+            <form id="form2" runat="server" action="/Signout">
+                <br />
+                <asp:Button ID="Logout" runat="server" Text="Se déconnecter" />
+            </form>
+        <% } %>
+        <asp:ContentPlaceHolder ID="LateralContent" runat="server">
                 
-            </asp:ContentPlaceHolder>
-        </div>
+        </asp:ContentPlaceHolder>
+    </div>
 
        
-        <div id="circle">
-                    <span style="display: inline-block;height: 30%; width: 1px;"></span>
-                <p style="height: 241px; width: 325px">Bienvenue sur le site d'entraide et de partage étudiant</p>
-        </div>       
+    <div id="circle">
+                <span style="display: inline-block;height: 30%; width: 1px;"></span>
+            <p style="height: 241px; width: 325px">Bienvenue sur le site d'entraide et de partage étudiant</p>
+    </div>       
     
-            <div id="maincontent" style=" height: 76%; width: 76% "> 
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+        <div id="maincontent"> 
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
 
 </body>
 </html>

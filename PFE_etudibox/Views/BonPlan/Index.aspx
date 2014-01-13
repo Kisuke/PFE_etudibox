@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.BonPlan.BonPlanModel>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PFE_etudibox.Models.BonPlanVO.BonPlan>>" %>
 
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
@@ -12,39 +12,63 @@
 </script>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
-        <h2>Bons Plans</h2>
-         <% foreach (var bonPlan in ViewData.Model)
-            { %>
-           
-        <% }%>
+
+    <div id="menuBonPlan">
+        <a href="#">Ajoutez un bon plan</a>
+
     </div>
+    <%  foreach (var bonPlan in ViewData.Model)
+    { %>
+        <div id="BonPlan">
+            <h2><%=bonPlan.titleBonplan%></h2>
+            <div class="cat-date">
+		        <span class="posted">Posté dans: </span>
+			        <em><a href="#"><%=bonPlan.categoryBonplan%></a></em>,
+                    <em><a href="#"><%=bonPlan.subCategoryBonplan%></a></em>
+		        <span class="date">&nbsp;&nbsp;Date: 
+			        <em><%=bonPlan.dateBonplan%></em>
+		        </span>
+	        </div>
+            <div class="post-teaser">
+                <img id="bonPlanImage<%=bonPlan.idBonplan%>" class="imageBonplan" alt="<%=bonPlan.titleBonplan%>" src="<%=bonPlan.imagePathBonplan%>"/>
+                <div class="text">
+			            <p><%=bonPlan.bodyBonPlan%></p>
+		            <div class="readMore">
+			            <span>Auteur: </span>
+				            <em><a href="#"><%=bonPlan.member.firstname%> <%=bonPlan.member.lastname%> </a></em><br />
+                        <span>Source: </span>
+                            <em><a href="#"><%=bonPlan.linkBonplan%></a></em><br />
+		            </div>
+	            </div>
+            </div>   
+        </div>
+    <% }%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LateralContent" runat="server">
     <div>
         <h3>Catégories</h3>
 
-        <ul class="niveau1">
-            <li class="menuAdmin">
-                La culture
-                <ul class="niveau2">
-                    <li class="menuAdmin">Cinéma</li>
-                    <li class="menuAdmin">Musée</li>
-                    <li class="menuAdmin">Opéra</li>
-                    <li class="menuAdmin">Théâtre</li>
-                    <li class="menuAdmin">Exposition</li>
+        <ul id="menu-accordeon">
+            <li>
+                Culture
+                <ul>
+                    <li>Cinéma</li>
+                    <li>Musée</li>
+                    <li>Opéra</li>
+                    <li>Théâtre</li>
+                    <li>Exposition</li>
                 </ul>
             </li>
-            <li class="menuAdmin">
+            <li >
                 Restaurant
             </li>
-            <li class="menuAdmin">
+            <li>
                 Carte
-                <ul class="niveau2">
-                    <li class="menuAdmin">Carte Imagine R</li>
-                    <li class="menuAdmin">Carte étudiante ISIC</li>
-                    <li class="menuAdmin">Carte Forest Hill</li>
+                <ul>
+                    <li>Carte Imagine R</li>
+                    <li>Carte étudiante ISIC</li>
+                    <li>Carte Forest Hill</li>
                 </ul>
             </li>
         </ul>

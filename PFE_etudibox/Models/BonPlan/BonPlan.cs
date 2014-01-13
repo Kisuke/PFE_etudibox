@@ -1,45 +1,40 @@
 ﻿using PFE_etudibox.Controllers.Inscription;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Windows.Forms;
 
-namespace PFE_etudibox.Models.BonPlanModel 
+namespace PFE_etudibox.Models.BonPlanVO  
 {
     public class BonPlan
     {
-        String id_bonplan { get; set; }
-        Member member { get; set; }
-        String title_bonplan { get; set; }
-        String corps_bonplan { get; set; }
-        String type_bonplan { get; set; }
-        String imagePath_bonplan { get; set; }
-        DateTime date_bonplan { get; set; }
+        public String idBonplan { get; private set; }
+        public Member member { get; private set; }
+        public String titleBonplan { get; private set; }
+        public String bodyBonPlan { get; private set; }
+        public String categoryBonplan { get; private set; }
+        public String subCategoryBonplan { get; private set; }
+        public String imagePathBonplan { get; private set; }
+        public DateTime dateBonplan { get; private set; }
+        public String linkBonplan { get; private set; }
 
-        public BonPlan(String id_bonplan, Member member, String title_bonplan, String corps_bonplan, String type_bonplan, String imagePath_bonplan, DateTime date_bonplan)
+        public BonPlan(String idBonplan, Member member, String titleBonplan, String bodyBonPlan, String categoryBonplan, String subCategoryBonplan, String imagePathBonplan, String linkBonplan, DateTime dateBonplan)
         {
-            this.id_bonplan = id_bonplan;
+            this.idBonplan = idBonplan;
             this.member = member;
-            this.corps_bonplan = corps_bonplan;
-            this.title_bonplan = title_bonplan;
-            this.type_bonplan = type_bonplan;
-            this.imagePath_bonplan = imagePath_bonplan;
-            this.date_bonplan = date_bonplan;
+            this.titleBonplan = titleBonplan;
+            this.bodyBonPlan = bodyBonPlan;
+            this.categoryBonplan = categoryBonplan;
+            this.subCategoryBonplan = subCategoryBonplan;
+            this.imagePathBonplan = imagePathBonplan;
+            this.linkBonplan = linkBonplan;
+            this.dateBonplan = dateBonplan;
         }
 
         public BonPlan() {} 
-
-        /**
-        * Name : LoadImage
-        * Function : Load an image thanks to the image path
-        * Input :
-        * Output: 
-        * */
-        protected void LoadImage()
-        {
-
-        }
-
 
     }
 }

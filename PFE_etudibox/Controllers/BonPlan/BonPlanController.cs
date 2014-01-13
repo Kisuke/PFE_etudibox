@@ -1,4 +1,5 @@
 ﻿using PFE_etudibox.Models.BonPlanModel;
+using PFE_etudibox.Models.BonPlanVO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,6 @@ namespace PFE_etudibox.Controllers.BonPlanController
 
         public ActionResult Index()
         {
-            List<BonPlan> bonPlanList = new List<BonPlan>();
 
             //Call of InscriptionModel 
             BonPlanModel bm = new BonPlanModel();
@@ -22,9 +22,9 @@ namespace PFE_etudibox.Controllers.BonPlanController
             bm.Connect();
 
             //List the bon plan saved in the database
-            bonPlanList = new BonPlanModel();
+            List<BonPlan> bonPlanList = bm.QueryList();
 
-            return View("Index", bonPlanList);
+            return View(bonPlanList);
         }
 
     }

@@ -20,6 +20,11 @@ namespace PFE_etudibox.Models.Base
             this.dataList = new List<List<Object>>();
         }
 
+        public QueryResult()
+        {
+            // TODO: Complete member initialization
+        }
+
         /**
         * Name : GetDataList
         * Function : Initialize
@@ -28,26 +33,41 @@ namespace PFE_etudibox.Models.Base
         * */
         public void Initialize()
         {
-            this.reader.Read();
-
-            //On itinitialise le nombre de ligne
-            int RowNumber = reader.Cast<object>().Count();
+            //this.reader.Read();
 
             //On itinitialise le nombre de champ
             this.FieldNumber = reader.FieldCount;
-            if (this.FieldNumber > 0)
+            /*if (this.FieldNumber > 0)
             {
-                this.reader.Read();
-                
-                    List<Object> tempList = new List<Object>();
-                    for (int i = 0; i < this.FieldNumber; i++)
+                List<Object> tempList = new List<Object>();
+                for (int i = 0; i < this.FieldNumber; i++)
+                {
+                    tempList.Add(reader.GetValue(i));
+                }
+                this.dataList.Add(tempList);
+            }*/
+            do
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
                     {
-                        tempList.Add(reader.GetValue(i));
+                        List<Object> test2List = new List<object>();
+                        for (int i = 0; i < this.FieldNumber; i++)
+                         {
+                             test2List.Add(reader.GetValue(i));
+                         }
+                        this.dataList.Add(test2List);
                     }
-                    this.dataList.Add(tempList);
-                
-            }
+                }
+            } while (reader.NextResult());
+          
+           
+           // this.dataList.Add(test2List);
             this.initialized = true;
+
+             //On itinitialise le nombre de ligne
+            this.RowNumber = this.dataList.Count;
             
         }
 
