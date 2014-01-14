@@ -6,7 +6,7 @@
 </script>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
+    <div id="BasicContentHolder">
         <br />
         <h1>Creation d&#39un compte utilisateur</h1>
             <form id="form2" runat="server">

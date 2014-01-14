@@ -22,44 +22,48 @@
         
     </style>
 </head>
-<body> 
-    <div id="logo">
-        <asp:Image ID="Image1" runat="server" Height="86px" ImageUrl="Images/EtudiBox 3.png" Width="222px" />
-    </div>         
-    <div id="horizontalbar">     
-        <ul id="menu"> 
-            <li><%= Html.ActionLink("Accueil", "Index", "Login")%></li>
-            <li><%= Html.ActionLink("Administratif", "Index", "Administratif")%></li>
-            <li><%= Html.ActionLink("Logement", "Index", "Logement")%></li> 
-            <li><%= Html.ActionLink("Bons Plans", "Index", "BonPlan")%></li> 
-            <li><%= Html.ActionLink("Trocs", "Index", "Troc")%></li> 
-            <li><%= Html.ActionLink("Tchat", "Index", "Tchat")%></li> 
-        </ul>
-    </div>
+<body>
+    <div id="page">
+        <div id="bloc-principal">
+            <div id="logo">
+                <asp:Image ID="Image1" runat="server" Height="86px" ImageUrl="Styles/Images/EtudiBox 3.png" Width="222px" />
+            </div>         
+            <div id="horizontalbar">     
+                <ul id="menu"> 
+                    <li><%= Html.ActionLink("Accueil", "Index", "Login")%></li>
+                    <li><%= Html.ActionLink("Administratif", "Index", "Administratif")%></li>
+                    <li><%= Html.ActionLink("Logement", "Index", "Logement")%></li> 
+                    <li><%= Html.ActionLink("Bons Plans", "Index", "BonPlan")%></li> 
+                    <li><%= Html.ActionLink("Trocs", "Index", "Troc")%></li> 
+                    <li><%= Html.ActionLink("Tchat", "Index", "Tchat")%></li> 
+                </ul>
+            </div>
      
-    <div id="sidebar" style="height: 76%; background-color: rgba(242, 242, 235, .85); width: 15%">
-            <%  if (Session["username"] != null)
-            { %>
-            <form id="form2" runat="server" action="/Signout">
-                <br />
-                <asp:Button ID="Logout" runat="server" Text="Se déconnecter" />
-            </form>
-        <% } %>
-        <asp:ContentPlaceHolder ID="LateralContent" runat="server">
+            <div id="sidebar" style="background-color: rgba(242, 242, 235, .85)">
+                    <%  if (Session["username"] != null)
+                    { %>
+                    <form id="form2" runat="server" action="/Signout">
+                        <br />
+                        <asp:Button ID="Logout" runat="server" Text="Se déconnecter" />
+                    </form>
+                <% } %>
+                <asp:ContentPlaceHolder ID="LateralContent" runat="server">
                 
-        </asp:ContentPlaceHolder>
+                </asp:ContentPlaceHolder>
+            </div> 
+            <div id="maincontent"> 
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer"> 
+            <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <a href="#">Contact</a>
+            <a href="#">Plan du site</a>
+            <a href="#">A propos</a>
+            <a href="#">CGU</a>
+        </div>
     </div>
-
-       
-    <div id="circle">
-                <span style="display: inline-block;height: 30%; width: 1px;"></span>
-            <p style="height: 241px; width: 325px">Bienvenue sur le site d'entraide et de partage étudiant</p>
-    </div>       
-    
-        <div id="maincontent"> 
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
-
 </body>
 </html>

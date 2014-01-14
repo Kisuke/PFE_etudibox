@@ -14,8 +14,18 @@
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
 
     <div id="menuBonPlan">
-        <a href="#">Ajoutez un bon plan</a>
-
+        <a href="#"> <img id="plus" alt="+" src="./Styles/Images/plus.jpg" />  Ajoutez un bon plan</a>
+        <form id="Tri" role="checkbox">
+            <label >Trier par</label>
+            <div class="styled-select" style="float:right"> 
+                <select id="tri">
+                    <option value="Carte">Carte</option>
+                    <option value="Culture">Culture</option>
+                    <option value="Date">Date</option>
+                    <option value="Restaurant">Restaurant</option>
+                </select>
+            </div>
+        </form>
     </div>
     <%  foreach (var bonPlan in ViewData.Model)
     { %>
@@ -35,9 +45,17 @@
 			            <p><%=bonPlan.bodyBonPlan%></p>
 		            <div class="readMore">
 			            <span>Auteur: </span>
-				            <em><a href="#"><%=bonPlan.member.firstname%> <%=bonPlan.member.lastname%> </a></em><br />
+				        <em><a href="#"><%=bonPlan.member.firstname%> <%=bonPlan.member.lastname%> </a></em>
+                        <div class="rating">
+                           <a href="#5" title="Donner 5 étoiles">☆</a>
+                           <a href="#4" title="Donner 4 étoiles">☆</a>
+                           <a href="#3" title="Donner 3 étoiles">☆</a>
+                           <a href="#2" title="Donner 2 étoiles">☆</a>
+                           <a href="#1" title="Donner 1 étoile">☆</a>
+                        </div><br />
                         <span>Source: </span>
-                            <em><a href="#"><%=bonPlan.linkBonplan%></a></em><br />
+                        <em><a href="#"><%=bonPlan.linkBonplan%></a></em>
+                        <br />
 		            </div>
 	            </div>
             </div>   

@@ -8,30 +8,92 @@ body
     color: black; 
     font-size: 110.01%;
     font-family: Helvetica,Arial,sans-serif;
-    margin: 0; padding: 1em;
-    min-width: 41em; 
+    margin: 0; 
+    height: 100% ;
+    width:97%
 }
+
+/* Page */
+    #page {
+	    min-height: 100%;
+	    position: static;
+    }
+
+/* Bloc Principal */
+    #bloc-principal {
+        position: static;
+        height: auto;
+    }
+
+/* Logo */    
+    #logo{
+        position: static;
+        margin-top: 1%;
+        margin-left: 4%;
+    }
+/* Barre latérale : Menu */
+    #sidebar{
+        text-align: center;
+        height: 50%;
+        width: 17%;
+        position: fixed;
+        margin-left: 3%;
+        margin-top: 3%;
+        display: inline-block;
+    }
+
+/* Contenu principal */
+    #maincontent{
+        margin-top: 3%;
+        position: static;
+        z-index: -1;
+        width: 70%;
+        height: auto;
+        display: block;
+        margin-left: 25%;
+    }
+
+/* Pied de page */
+    #footer{
+       position: static;
+        z-index: 1;
+        padding-top: 2%;
+        height: 100px;
+        background-image: linear-gradient(rgb(0, 0, 0) 1%, rgb(90, 90, 90) 98%, rgb(60, 60, 60) 0%);
+        text-align: center;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        margin-right: -3%;
+    }
+
+    #footer a {
+        text-decoration:none;
+        text-transform:none;
+        color:white;
+        margin-right:2%
+    }
 
 /* Barre horizontale du menu principal */
     #horizontalbar
     {
-        width:77%;
-        padding:0;
-        border-radius: 5px 10px 0 5px;
-        margin-left:21%;
-        box-shadow: 8px 8px 12px #aaa;
-        background-color:white;
+        width: 77%;
+        border-radius: 5px 10px 0px 5px;
+        box-shadow: 8px 8px 12px rgb(170, 170, 170);
+        position: static;
+        display: inline-block;
+        float: right;
+        margin-top: -6%;
     }
-
 
     ul#menu
     {
-            
         overflow:hidden;
         margin: 0;
         padding: 0;
         width: 104%;
     }
+
     #menu li
     {
         list-style-type:none;
@@ -41,9 +103,7 @@ body
         background-image: -o-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
         background-image: -ms-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
         background-image: linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
-
         border-right: 1px solid rgba(9, 9, 9, 0.125);
-
         box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
         -moz-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
         -webkit-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
@@ -94,33 +154,34 @@ body
             color:black;
     }
 
-/* Barre latérale : Menu */
-    #sidebar{
-        margin-left:1%;
-        margin-top:3%;
-        position:absolute;
-        background-color:#f2ebeb;
-        text-align: center;
-        position:fixed;
+/* BasicContentHolder */
+    #BasicContentHolder {
+        position: static;
+        height: 486px;
+        margin-bottom: 20%;
+        width: 100%;
+        margin-top: -4%;
     }
 
-/* Contenu principal */
-    #maincontent{
-        margin-left:20%;
-        margin-top:3%;
-        position:absolute;
-        /*background-color:#f2ebeb;*/
-        z-index:-1;
-        width: 76%;  
-        display: inline;
+/* Logout */
+    #Logout {
+        background-image: linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+        width: 65%;
+        padding: 3%;
+        border: 1px;
+        border-radius: 5px 10px 0px 5px;
+        box-shadow: 8px 8px 12px rgb(170, 170, 170);
+        color:grey;
+        text-decoration:none;
+        font-weight:bold;
     }
 
 /* Cercle */
     #circle 
     {
-        /*width: 400px;
-        height: 400px;*/
-        position:absolute;
+        width: 400px;
+        height: 400px;
+        position:static;
         background-color:#1eb018;
         filter:alpha(opacity=85); 
         -moz-opacity:0.85; 
@@ -129,7 +190,7 @@ body
         -webkit-border-radius: 400px;
         border-radius: 400px;
         list-style-type:none;
-        margin-left:600px;
+        margin-left: 30%;
         margin-top:100px;
         z-index:-1;
     }
@@ -208,11 +269,7 @@ body
         max-height: 15em;
     }
 
-/* Logo */    
-    #logo{
-        margin-left:20px;
-        position:absolute;
-    }
+
 
 /* CSS de BonPlan */
     #menuBonPlan {
@@ -223,11 +280,44 @@ body
         padding : 2% 2% 2%;
     }
 
+    #menuBonPlan img {
+        width: 2%;
+    }
+
+     #menuBonPlan form {
+        float: right;
+        width: 38%;
+        font: 18px Georgia,serif;
+        color: rgb(100, 100, 100);
+    }
      #menuBonPlan a {
 	    font:  18px Georgia, serif;
 	    color: #646464;
 	    text-decoration: none;
     }
+
+     .styled-select {
+           width: 50%;
+           height: 30px;
+           overflow: hidden;
+           background: url('Images/down_arrow_select.jpg') no-repeat right #ddd;
+           border: 1px solid #ccc;
+           margin-top: -1%;
+           margin-right: 21%;
+      }
+
+     .styled-select select {
+           background: transparent;
+           width: 268px;
+           padding: 5px;
+           line-height: 1;
+           border: 0;
+           border-radius: 0;
+           height: 34px;
+           -webkit-appearance: none;
+	       font:  18px Georgia, serif;
+	       color: #646464;
+       }
 
     #BonPlan {
         background-image: linear-gradient(rgb(254, 254, 254) 14%, rgb(240, 240, 240) 50%, rgb(230, 230, 230) 75%);
@@ -307,4 +397,22 @@ body
 	    font:  18px Georgia, serif;
 	    color: #646464;
 	    text-decoration: none;
+    }
+
+    .rating {
+       direction: rtl;
+       float: right;
+    }
+    .rating a {
+       color: #aaa;
+       text-decoration: none;
+       font-size: 2em;
+       transition: color .4s;
+    }
+    .rating a:hover,
+    .rating a:focus,
+    .rating a:hover ~ a,
+    .rating a:focus ~ a {
+       color: orange;
+       cursor: pointer;
     }

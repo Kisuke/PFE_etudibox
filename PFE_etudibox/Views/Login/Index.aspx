@@ -12,8 +12,14 @@
     }
     
 </script>
-
-
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div id="BasicContentHolder">
+        <div id="circle">
+                    <span style="display: inline-block;height: 30%; width: 1px;"></span>
+                <p style="height: 241px; width: 325px">Bienvenue sur le site d'entraide et de partage étudiant</p>
+        </div>
+    </div>    
+</asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="LateralContent" runat="server">
     <%  if (Session["username"] == null)
        { %>
