@@ -32,10 +32,24 @@ namespace PFE_etudibox.Models.BonPlanModel
        * Input :
        * Output:
        * */
-        public List<BonPlan> QueryList() 
+        public List<BonPlan> QueryList(int categoryId, int subCategoryId) 
         {
             //Query to execute 
-            string query = "SELECT BP.*, USER.eb_user_lastname, USER.eb_user_firstname, CBP.eb_category_bon_plan, SCBP.eb_sub_category_bon_plan FROM etudibox.eb_bon_plan AS BP LEFT JOIN etudibox.eb_user AS USER ON USER.eb_user_id = BP.eb_user_id LEFT JOIN etudibox.eb_category_bon_plan AS CBP ON CBP.eb_category_bon_plan_id = BP.eb_bon_plan_category_id LEFT JOIN etudibox.eb_sub_category_bon_plan AS SCBP ON SCBP.eb_sub_category_bon_plan_id = BP.eb_bon_plan_sub_category_id AND SCBP.eb_category_bon_plan_id = CBP.eb_category_bon_plan_id;";
+            string query = "SELECT BP.*, USER.eb_user_lastname, USER.eb_user_firstname, CBP.eb_category_bon_plan, SCBP.eb_sub_category_bon_plan FROM etudibox.eb_bon_plan AS BP LEFT JOIN etudibox.eb_user AS USER ON USER.eb_user_id = BP.eb_user_id LEFT JOIN etudibox.eb_category_bon_plan AS CBP ON CBP.eb_category_bon_plan_id = BP.eb_bon_plan_category_id LEFT JOIN etudibox.eb_sub_category_bon_plan AS SCBP ON SCBP.eb_sub_category_bon_plan_id = BP.eb_bon_plan_sub_category_id AND SCBP.eb_category_bon_plan_id = CBP.eb_category_bon_plan_id";
+
+            //On ajoute où non des critères supplémentaires de sélection  à la reqête (catégorie, sous catégorie)
+            if (categoryId > 0 &&  subCategoryId==0)
+            {
+                query += " WHERE BP.eb_bon_plan_category_id= "+categoryId+";";
+            }
+            else if (categoryId > 0 && subCategoryId > 0)
+            {
+                query += " WHERE BP.eb_bon_plan_category_id= " + categoryId + " AND BP.eb_bon_plan_sub_category_id= " + subCategoryId + ";";
+            }
+            else
+            {
+                query += ";";
+            }
             QueryResult dataList = db.Query(query);
 
             // Initialisation & Declaration
@@ -44,7 +58,9 @@ namespace PFE_etudibox.Models.BonPlanModel
             String[] idbonplan = new String[nbRow];
             String[] title = new String[nbRow]; 
             String[] imagePath = new String[nbRow]; 
-            String[] user_id = new String[nbRow]; 
+            String[] user_id = new String[nbRow];
+            String[] idCategory = new String[nbRow];
+            String[] idSubCategory = new String[nbRow]; 
             String[] category = new String[nbRow];
             String[] subCategory = new String[nbRow]; 
             String[] body = new String[nbRow]; 
@@ -71,20 +87,26 @@ namespace PFE_etudibox.Models.BonPlanModel
                             title[i] = Convert.ToString(value);
                             break;
                         case 2:
-                            imagePath[i] = Convert.ToString(value);
+                            link[i] = Convert.ToString(value);
                             break;
                         case 3:
-                            user_id[i] = Convert.ToString(value);
-                            break;
-                        case 5:
                             body[i] = Convert.ToString(value);
                             break;
+                        case 4:
+                            date[i] = Convert.ToDateTime(value);
+                            break;
+                        case 5:
+                            imagePath[i] = Convert.ToString(value);
+                            break;
                         case 6:
-                             date[i] = Convert.ToDateTime(value);
+                            user_id[i] = Convert.ToString(value);
+                             break;
+                        case 7:
+                             idCategory[i] = Convert.ToString(value);
                              break;
                         case 8:
-                             link[i] = Convert.ToString(value);
-                            break;
+                             idSubCategory[i] = Convert.ToString(value);
+                             break;
                         case 9:
                             lastname[i] = Convert.ToString(value);
                             break;
@@ -101,7 +123,7 @@ namespace PFE_etudibox.Models.BonPlanModel
                              break;
                      }
                  }
-                 this.bonPlanList.Add(new BonPlan(idbonplan[i], new Member(user_id[i], lastname[i], firstname[i]), title[i], body[i], category[i], subCategory[i], imagePath[i],  link[i], date[i]));
+                 this.bonPlanList.Add(new BonPlan(idbonplan[i], new Member(user_id[i], lastname[i], firstname[i]), title[i], body[i], idCategory[i], category[i], idSubCategory[i], subCategory[i], imagePath[i],  link[i], date[i]));
 
                 //Reinitialization (à faire)
             }

@@ -18,8 +18,8 @@
         <form id="Tri" role="checkbox">
             <label >Trier par</label>
             <div class="styled-select" style="float:right"> 
-                <select id="tri">
-                    <option value="Carte">Carte</option>
+                <select id="tri" runat="server" action="/BonPlan" role="button">
+                    <option value="<a href='BonPlan?id=1,1'/>">Carte</option>
                     <option value="Culture">Culture</option>
                     <option value="Date">Date</option>
                     <option value="Restaurant">Restaurant</option>
@@ -33,8 +33,8 @@
             <h2><%=bonPlan.titleBonplan%></h2>
             <div class="cat-date">
 		        <span class="posted">Posté dans: </span>
-			        <em><a href="#"><%=bonPlan.categoryBonplan%></a></em>,
-                    <em><a href="#"><%=bonPlan.subCategoryBonplan%></a></em>
+			        <em><a href="BonPlan?id=<%=bonPlan.idCategoryBonplan%>" ><%=bonPlan.categoryBonplan%></a></em>,
+                    <em><a href="BonPlan?id=<%=bonPlan.idCategoryBonplan%>,<%=bonPlan.idSubCategoryBonplan%>" ><%=bonPlan.subCategoryBonplan%></a></em>
 		        <span class="date">&nbsp;&nbsp;Date: 
 			        <em><%=bonPlan.dateBonplan%></em>
 		        </span>
@@ -53,8 +53,8 @@
                            <a href="#2" title="Donner 2 étoiles">☆</a>
                            <a href="#1" title="Donner 1 étoile">☆</a>
                         </div><br />
-                        <span>Source: </span>
-                        <em><a href="#"><%=bonPlan.linkBonplan%></a></em>
+                        <span>Source:</span>
+                        <em><a href="<%=bonPlan.linkBonplan%>" target="_blank"><%=bonPlan.linkBonplan%></a></em>
                         <br />
 		            </div>
 	            </div>
@@ -69,24 +69,24 @@
 
         <ul id="menu-accordeon">
             <li>
-                Culture
+                <a href="BonPlan?id=1" >Culture</a>
                 <ul>
-                    <li>Cinéma</li>
-                    <li>Musée</li>
-                    <li>Opéra</li>
-                    <li>Théâtre</li>
-                    <li>Exposition</li>
+                    <li><a href="BonPlan?id=1,1" >Cinéma</a></li>
+                    <li><a href="BonPlan?id=1,2" >Musée</a></li>
+                    <li><a href="BonPlan?id=1,3" >Opéra</a></li>
+                    <li><a href="BonPlan?id=1,4" >Théâtre</a></li>
+                    <li><a href="BonPlan?id=1,5" >Exposition</a></li>
                 </ul>
             </li>
             <li >
-                Restaurant
+                <a href="BonPlan?id=2" >Restaurant</a>
             </li>
             <li>
-                Carte
+                <a href="BonPlan?id=3" >Carte</a>
                 <ul>
-                    <li>Carte Imagine R</li>
-                    <li>Carte étudiante ISIC</li>
-                    <li>Carte Forest Hill</li>
+                    <li><a href="BonPlan?id=3,5" >Carte Imagine R</a></li>
+                    <li><a href="BonPlan?id=3,6" >Carte Forest Hill</a></li>
+                    <li><a href="BonPlan?id=3,7" >Carte étudiante ISIC</a></li>
                 </ul>
             </li>
         </ul>

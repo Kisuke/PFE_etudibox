@@ -30,14 +30,14 @@
                     <% using (Html.BeginForm())
 	                    { %>
        
-                    <label for="email">Email:</label>
+                    <label for="email">Email</label>
                     <br />
                     <input ID="email" name="email" type="Email" required="required" role="textbox"/>
 
                     <br />
                     <br />
 
-                    <label for="password">Password:</label>
+                    <label for="password">Password</label>
                     <br />
                    <input name="password" type="Password" required="required" />
 

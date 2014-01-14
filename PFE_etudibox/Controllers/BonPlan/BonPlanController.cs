@@ -14,6 +14,26 @@ namespace PFE_etudibox.Controllers.BonPlanController
 
         public ActionResult Index()
         {
+            //Recupération de l'id de la catégorie pour sélectionner la liste à afficher
+            int categoryId = 0;
+            int subCategoryId = 0;
+            if (Request.QueryString["id"] != null)
+            {
+                //Recherche d'un séparateur
+                if (Request.QueryString["id"].Contains(","))
+                {
+                    //On veut lister les bons plans d'une sous-catégorie
+                    String[] temp = Request.QueryString["id"].Split(new Char [] {','});
+                    categoryId= int.Parse(temp[0]);
+                    subCategoryId = int.Parse(temp[1]);
+                }
+                else
+                {
+                    //On veut lister les bons plans d'une catégorie
+                    categoryId = int.Parse(Request.QueryString["id"]);
+                }
+                
+            }
 
             //Call of InscriptionModel 
             BonPlanModel bm = new BonPlanModel();
@@ -22,7 +42,7 @@ namespace PFE_etudibox.Controllers.BonPlanController
             bm.Connect();
 
             //List the bon plan saved in the database
-            List<BonPlan> bonPlanList = bm.QueryList();
+            List<BonPlan> bonPlanList = bm.QueryList(categoryId, subCategoryId);
 
             return View(bonPlanList);
         }

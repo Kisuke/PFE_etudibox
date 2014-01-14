@@ -10,7 +10,7 @@ body
     font-family: Helvetica,Arial,sans-serif;
     margin: 0; 
     height: 100% ;
-    width:97%
+    width:100%;
 }
 
 /* Page */
@@ -23,6 +23,7 @@ body
     #bloc-principal {
         position: static;
         height: auto;
+        min-height: 832px;
     }
 
 /* Logo */    
@@ -34,17 +35,17 @@ body
 /* Barre latérale : Menu */
     #sidebar{
         text-align: center;
-        height: 50%;
+        height: 55%;
         width: 17%;
         position: fixed;
         margin-left: 3%;
-        margin-top: 3%;
+        margin-top: 2%;
         display: inline-block;
     }
 
 /* Contenu principal */
     #maincontent{
-        margin-top: 3%;
+        margin-top: 2%;
         position: static;
         z-index: -1;
         width: 70%;
@@ -64,26 +65,35 @@ body
         bottom: 0px;
         right: 0px;
         left: 0px;
-        margin-right: -3%;
+        width: 100%;
+    }
+
+    #footer ul {
+        margin-left: 27%;
+    }
+
+    #footer li {
+        float:left;
+        width: 15%;
+        list-style-type:none;
     }
 
     #footer a {
         text-decoration:none;
-        text-transform:none;
         color:white;
-        margin-right:2%
+        margin-right: 10%;
     }
 
 /* Barre horizontale du menu principal */
     #horizontalbar
     {
-        width: 77%;
+        width: 73%;
         border-radius: 5px 10px 0px 5px;
         box-shadow: 8px 8px 12px rgb(170, 170, 170);
         position: static;
-        display: inline-block;
-        float: right;
+        float: left;
         margin-top: -6%;
+        margin-left: 23%;
     }
 
     ul#menu
@@ -301,13 +311,18 @@ body
         text-transform:none;
         color:white
     }
-    #menu-accordeon a {
+
+    #menu-accordeon li a {
         display:block;
         text-decoration: none;
         padding: 8px 0;
-        font-family: verdana;
-        font-size:1.2em
+        color:grey;
     }
+
+    #menu-accordeon li li a {
+        color:white;
+    }
+
     #menu-accordeon ul li a, #menu-accordeon li:hover li a {
         font-size:1em
     }
