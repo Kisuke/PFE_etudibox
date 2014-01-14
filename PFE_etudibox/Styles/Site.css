@@ -163,9 +163,60 @@ body
         margin-top: -4%;
     }
 
-/* Logout */
-    #Logout {
-        background-image: linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+/* InscriptionContent */
+    #inscriptionContent {
+        position: static;
+        height: 486px;
+        margin-bottom: 22%;
+        width: 76%;
+        padding-left: 24%;
+    }
+
+       #inscriptionContent   fieldset {
+      margin-bottom: 15px;
+      padding: 10px;
+    }
+ 
+     #inscriptionContent  legend {
+      padding: 0px 3px;
+      font-weight: bold;
+      font-variant: small-caps;
+    }
+ 
+     #inscriptionContent label {
+      width: 30%;
+      display: inline-block;
+      vertical-align: top;
+      margin: 6px;
+    }
+ 
+     #inscriptionContent em {
+      font-weight: bold;
+      font-style: normal;
+      color: #f00;
+    }
+ 
+     #inscriptionContent input:focus {
+      background: #eaeaea;
+    }
+ 
+     #inscriptionContent  input, #inscriptionContent textarea {
+      width: 249px;
+    }
+ 
+    #inscriptionContent textarea {
+      height: 100px;
+    }
+ 
+    #inscriptionContent input[type=submit] {
+      width: 150px;
+      padding: 10px;
+      margin-left: 39%;
+    }
+
+/* Bouton */
+    input[type=submit] {
+        background-image: linear-gradient(rgb(254, 254, 254) 0%, rgb(240, 240, 240) 50%, rgb(230, 230, 230) 51%);
         width: 65%;
         padding: 3%;
         border: 1px;
@@ -175,6 +226,11 @@ body
         text-decoration:none;
         font-weight:bold;
     }
+
+    input[type=submit]:hover {
+        background-image : linear-gradient(rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+    }
+
 
 /* Cercle */
     #circle 
