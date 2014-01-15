@@ -774,7 +774,7 @@ body
     }
 
 
-    /*CSS Admin*/
+      /*CSS Admin*/
 
 @import url(http://fonts.googleapis.com/css?family=Lato);
 @charset 'UTF-8';
@@ -800,7 +800,7 @@ body
   padding: 6px 15px;
 }
 #cssmenu {
-  width: 200px;
+  width: 100%;
 }
 #cssmenu > ul > li {
   cursor: pointer;
@@ -811,7 +811,7 @@ body
   border-bottom: 1px solid #3e3d3c;
 }
 #cssmenu > ul > li > a {
-  font-size: 13px;
+  font-size: 16px;
   display: block;
   color: #ffffff;
   text-shadow: 0 1px 1px #000;
@@ -859,7 +859,7 @@ body
   background: #efefef;
   display: block;
   color: #797979;
-  font-size: 13px;
+  font-size: 16px;
 }
 #cssmenu ul ul li {
   border-bottom: 1px solid #c9c9c9;
