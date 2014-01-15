@@ -27,13 +27,13 @@ DROP TABLE IF EXISTS `eb_bon_plan`;
 CREATE TABLE `eb_bon_plan` (
   `id_eb_bon_plan` int(11) NOT NULL AUTO_INCREMENT,
   `eb_bon_plan_title` varchar(45) NOT NULL,
+  `eb_bon_plan_link` varchar(255) DEFAULT NULL,
+  `eb_bon_plan_body` varchar(2000) DEFAULT NULL,
+  `eb_bon_plan_date` datetime NOT NULL,
   `eb_bon_plan_image_path` varchar(255) DEFAULT NULL,
   `eb_user_id` int(11) DEFAULT NULL,
   `eb_bon_plan_category_id` int(11) NOT NULL,
-  `eb_bon_plan_body` varchar(2000) DEFAULT NULL,
-  `eb_bon_plan_date` datetime NOT NULL,
   `eb_bon_plan_sub_category_id` int(11) NOT NULL,
-  `eb_bon_plan_link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_eb_bon_plan`),
   UNIQUE KEY `id_eb_bon_plan_UNIQUE` (`id_eb_bon_plan`),
   KEY `eb_user_id_idx` (`eb_user_id`),
@@ -51,7 +51,7 @@ CREATE TABLE `eb_bon_plan` (
 
 LOCK TABLES `eb_bon_plan` WRITE;
 /*!40000 ALTER TABLE `eb_bon_plan` DISABLE KEYS */;
-INSERT INTO `eb_bon_plan` VALUES (1,'Centre Georges Pompidou','.\\BDDFile\\beaubourg.gif',1,1,' Musée gratuit pour tous les premiers dimanches du mois. <br/> Pour les moins de 26 ans : accès gratuit uniquement au Musée, après retrait d un billet exonéré aux caisses.','2013-12-12 08:09:00',2,'http://billetterie.centrepompidou.fr/Accueil.aspx'),(2,'Réduction Futuroscope','.\\BDDFile\\Futuroscope.jpg',1,3,'Votre billet à 29 € au lieu de 39 €. ','2014-01-05 13:47:00',7,'http://www.isic.fr/isic-avantages/futuroscope/'),(3,'Réduction Sony','.\\BDDFile\\Sony.jpg',1,3,'Jusqu’à 18% de réduction  sur de nombreux produits Sony ! <br/> Profitez de 8% de réduction sur les produits informatiques (ordinateurs portables, tablettes, eReader) et 18% de réductions sur les produits audio et vidéo  (casques, enceintes sans fil, appareils photo…).','2014-01-13 14:21:00',7,'http://www.isic.fr/isic-avantages/sony/'),(4,'Ta place de ciné à prix réduit !','.\\BDDFile\\Gaumont_Pathe.jpg',1,3,'Quoi de mieux qu’un Bon Plan valable toute l’année dans les cinémas Gaumont et Pathé d’Île-de-France ? <br/> Pour toi, abonné(e) imagine R, la place est à 6,40 €* du lundi au jeudi et à 7,40 €* du vendredi au dimanche inclus.','2014-01-13 14:26:00',5,'http://www.imagine-r.com/les-bons-plans/109568/Ta-place-de-cine-a-prix-reduit.aspx');
+INSERT INTO `eb_bon_plan` VALUES (1,'Centre Georges Pompidou','http://billetterie.centrepompidou.fr/Accueil.aspx',' Musée gratuit pour tous les premiers dimanches du mois. <br/> Pour les moins de 26 ans : accès gratuit uniquement au Musée, après retrait d\\\'\'un billet exonéré aux caisses.','2013-12-12 08:09:00','.\\BDDFile\\beaubourg.gif',1,1,2),(2,'Réduction Futuroscope','http://www.isic.fr/isic-avantages/futuroscope/','Votre billet à 29 € au lieu de 39 €. ','2014-01-05 13:47:00','.\\BDDFile\\Futuroscope.jpg',1,3,7),(3,'Réduction Sony','http://www.isic.fr/isic-avantages/sony/','Jusqu’à 18% de réduction  sur de nombreux produits Sony ! <br/> Profitez de 8% de réduction sur les produits informatiques (ordinateurs portables, tablettes, eReader) et 18% de réductions sur les produits audio et vidéo  (casques, enceintes sans fil, appareils photo…).','2014-01-13 14:21:00','.\\BDDFile\\Sony.jpg',1,3,7),(4,'Ta place de ciné à prix réduit !','http://www.imagine-r.com/les-bons-plans/109568/Ta-place-de-cine-a-prix-reduit.aspx','Quoi de mieux qu’un Bon Plan valable toute l’année dans les cinémas Gaumont et Pathé d’Île-de-France ? <br/> Pour toi, abonné(e) imagine R, la place est à 6,40 €* du lundi au jeudi et à 7,40 €* du vendredi au dimanche inclus.','2014-01-13 14:26:00','.\\BDDFile\\Gaumont_Pathe.jpg',1,3,5);
 /*!40000 ALTER TABLE `eb_bon_plan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,4 +145,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-01-13 20:38:34
+-- Dump completed on 2014-01-15 13:13:52
