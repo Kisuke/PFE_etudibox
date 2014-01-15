@@ -97,11 +97,10 @@
                  
 </div>
 
-</div>
-
-
-     
+</div>  
 </asp:Content>
+
+
 
 <asp:Content ID="Content2" ContentPlaceHolderID="LateralContent" runat="server">
    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
