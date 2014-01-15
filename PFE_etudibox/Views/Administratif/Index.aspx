@@ -19,80 +19,80 @@
         <br />
         <div id="circle1"style="margin-left:2%"">
                     <br/>
-                          <h2 style="margin-left:39%;color:black;font:bold";>Aide</h2>
+                          <h3 style="margin-left:39%;color:black;font:bold";>Aide</h3>
                     <br/>
         <a href="Administratif/Index.aspx">
-            <img src="Styles/Images/Aide.png"style="height:58%; width:58%;margin-top:-15%;margin-left:20%";/>
+            <img src="Styles/Images/Aide.png"style="height:50%; width:50%;margin-top:-15%;margin-left:25%;border: none";/>
         </a> 
       
 </div>
 
         <div id="circle2"style="margin-left:18%">
                     <br/>
-                           <h2 style="margin-left:39%;color:black;font:bold";>Prêt</h2>
+                           <h3 style="margin-left:39%;color:black;font:bold";>Prêt</h3>
                     <br />
          <a href="Administratif/Prêt">
-            <img src="Styles/Images/Pret.png"style="height:58%; width:58%;margin-top:-15%;margin-left:20%";/>
+            <img src="Styles/Images/Pret.png"style="height:50%; width:50%;margin-top:-15%;margin-left:25%;border: none";/>
         </a>
             
 </div>
 
         <div id="circle3"style="margin-left:35%">
                     <br/>
-                           <h2 style="margin-left:37%;color:black;font:bold";>Impôt</h2>
+                           <h3 style="margin-left:37%;color:black;font:bold";>Impôt</h3>
                     <br />
         <a href="Administratif/Impôt">
-            <img src="Styles/Images/Impot.png"style="height:58%; width:58%;margin-top:-15%;margin-left:20%";/>
+            <img src="Styles/Images/Impot.png"style="height:50%; width:50%;margin-top:-15%;margin-left:25%;border: none";/>
         </a>
       
 </div>
 
         <div id="circle4"style="margin-left:54%;">
                     <br/>
-                          <h2 style="margin-left:28%;color:black;font:bold";>Stage/Vie</h2>
+                          <h3 style="margin-left:28%;color:black;font:bold";>Stage/Vie</h3>
                     <br />
         <a href="Administratif/Stage-Vie">
-            <img src="Styles/Images/Stage.png"style="height:58%; width:58%;margin-top:-15%;margin-left:22%";/>
+            <img src="Styles/Images/Stage.png"style="height:50%; width:50%;margin-top:-15%;margin-left:25%;border: none";/>
         </a>
 
 </div>
 
         <div id="circle5"style="margin-left:8%;margin-top:17%;">
                     <br/>
-                            <h2 style="margin-left:28%;color:black;font:bold";>Transport</h2>
+                            <h3 style="margin-left:28%;color:black;font:bold";>Transport</h3>
                     <br />
         <a href="Administratif/Transport">
-            <img src="Styles/Images/Transport.jpg"style="height:58%; width:58%;margin-top:-15%;margin-left:20%";/>
+            <img src="Styles/Images/Transport.jpg"style="height:50%; width:50%;margin-top:-15%;margin-left:25%;border: none";/>
         </a>
           
 </div>
 
         <div id="circle6"style="margin-left:27%;margin-top:17%;">
                     <br/>
-                            <h2 style="margin-left:28%;margin-top:-3%;color:black;font:bold";>Sécurité Sociale</h2>
+                            <h3 style="margin-left:28%;margin-top:-3%;color:black;font:bold";>Sécurité Sociale</h3>
                     <br />
          <a href="Administratif/Sécurité-Sociale">
-            <img src="Styles/Images/Secu.png"style="height:55%; width:55%;margin-top:-14%;margin-left:23%";/>
+            <img src="Styles/Images/Secu.png"style="height:50%; width:50%;margin-top:-14%;margin-left:23%;border: none";/>
         </a>
     
 </div>
 
             <div id="circle7"style="margin-left:44%;margin-top:17%;">
                     <br/>
-                            <h2 style="margin-left:24%;color:black;font:bold";>Logement</h2>
+                            <h3 style="margin-left:24%;color:black;font:bold";>Logement</h3>
                     <br/>
          <a href="Administratif/Logement">
-            <img src="Styles/Images/Logement.png"style="height:55%; width:55%;margin-top:-14%;margin-left:23%";/>
+            <img src="Styles/Images/Logement.png"style="height:50%; width:50%;margin-top:-14%;margin-left:23%;border: none";/>
         </a>
                 
 </div>
 
                 <div id="circle8"style="margin-left:63%;margin-top:17%;">
                     <br/>
-                             <h2 style="margin-left:20%;color:black;font:bold";>Etudiant de + de 25ans</h2>
+                             <h3 style="margin-top:-1%;margin-left:20%;color:black;font:bold";>Etudiant + de 25ans</h3>
                     <br />
          <a href="Administratif/Etudiant-de-plus-de-25ans">
-            <img src="Styles/Images/Students25.PNG"style="height:48%; width:48%;margin-top:-14%;margin-left:27%";/>
+            <img src="Styles/Images/Students25.PNG"style="height:48%; width:48%;margin-top:-14%;margin-left:27%;border: none";/>
         </a>
                  
 </div>
