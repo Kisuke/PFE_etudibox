@@ -277,8 +277,8 @@ body
     }
     #circle1 
          {
-            width: 400px;
-            height: 400px;
+            width: 250px;
+            height: 250px;
             position:absolute;
             background-color:#1eb018;
             filter:alpha(opacity=85); 
@@ -293,8 +293,8 @@ body
         }
     #circle2 
          {
-            width: 400px;
-            height: 400px;
+            width: 250px;
+            height: 250px;
             position:absolute;
             background-color:#6495ED;
             filter:alpha(opacity=85); 
@@ -311,8 +311,8 @@ body
 
           #circle3 
          {
-            width: 400px;
-            height: 400px;
+            width: 250px;
+            height: 250px;
             position:absolute;
             background-color:#90EE90;
             filter:alpha(opacity=85); 
@@ -328,8 +328,8 @@ body
         }
            #circle4 
          {
-            width: 400px;
-            height: 400px;
+            width: 250px;
+            height: 250px;
             position:absolute;
             background-color:#FA8072;
             filter:alpha(opacity=85); 
@@ -345,8 +345,8 @@ body
         }
             #circle5 
          {
-            width: 400px;
-            height: 400px;
+            width: 250px;
+            height: 250px;
             position:absolute;
             background-color:#87CEEB;
             filter:alpha(opacity=85); 
@@ -362,8 +362,8 @@ body
         }
              #circle6 
          {
-            width: 400px;
-            height: 400px;
+            width: 250px;
+            height: 250px;
             position:absolute;
             background-color:#FFB6C1;
             filter:alpha(opacity=85); 
@@ -379,8 +379,8 @@ body
         }
               #circle7 
          {
-            width: 400px;
-            height: 400px;
+            width: 250px;
+            height: 250px;
             position:absolute;
             background-color:#40E0D0;
             filter:alpha(opacity=85); 
@@ -397,8 +397,8 @@ body
 
                #circle8
          {
-            width: 400px;
-            height: 400px;
+            width: 250px;
+            height: 250px;
             position:absolute;
             background-color:#008080;
             filter:alpha(opacity=85); 
@@ -624,8 +624,247 @@ body
        color: orange;
        cursor: pointer;
     }
-    /* CSS menu gauche administratif */
-      ul.niveau1 ul {background-color:white;display: none; position: absolute; left: 305px; width:200px; top: -1px; margin:0px; padding: 0px;border-radius: 5px 10px 0px 5px;box-shadow: 8px 8px 12px rgb(170, 170, 170);}
-         li.menuAdmin {list-style-type: none; position: relative; border-radius: 5px 10px 0px 5px;box-shadow: 8px 8px 12px rgb(170, 170, 170); width:300px; padding: 2px; margin: 0px;font-variant: small-caps;font-family: "Trebuchet MS", Verdana, Geneva, Arial;font-size:x-large;}
-         ul.niveau2 li:hover {background-color: #3EDA4D;}
-         li.menuAdmin:hover ul.niveau2 {display: block;} 
+
+     /*CSS de Troc*/
+
+    #menuTroc {
+        background-image: linear-gradient(rgb(254, 254, 254) 14%, rgb(240, 240, 240) 50%, rgb(230, 230, 230) 75%);
+        width:83%;
+        margin-left:6%;
+        border-radius:2%;
+        padding : 2% 2% 2%;
+    }
+
+    #menuTroc img {
+        width: 2%;
+    }
+
+     #menuTroc form {
+        float: right;
+        width: 38%;
+        font: 18px Georgia,serif;
+        color: rgb(100, 100, 100);
+    }
+     #menuTroc a {
+	    font:  18px Georgia, serif;
+	    color: #646464;
+	    text-decoration: none;
+    }
+
+     .styled-select {
+           width: 50%;
+           height: 30px;
+           overflow: hidden;
+           background: url('Images/down_arrow_select.jpg') no-repeat right #ddd;
+           border: 1px solid #ccc;
+           margin-top: -1%;
+           margin-right: 21%;
+      }
+
+     .styled-select select {
+           background: transparent;
+           width: 268px;
+           padding: 5px;
+           line-height: 1;
+           border: 0;
+           border-radius: 0;
+           height: 34px;
+           -webkit-appearance: none;
+	       font:  18px Georgia, serif;
+	       color: #646464;
+       }
+
+    #Troc {
+        background-image: linear-gradient(rgb(254, 254, 254) 14%, rgb(240, 240, 240) 50%, rgb(230, 230, 230) 75%);
+        width:83%;
+        margin-left:6%;
+        margin-bottom:4%;
+        border-radius:2%;
+        padding:2%;
+        padding-top:0%;
+    }
+
+    img.imageTroc {
+        width: 20%;
+    }
+
+    #dateTroc {
+        color:GrayText;
+        text-transform:uppercase;
+    }
+
+    #dateTroc {
+        width: 30%;
+    }
+
+    .cat-date {
+	    margin-bottom: 10px;
+    }
+
+    .post-teaser {
+	    overflow: hidden;
+    }
+    .readMore {
+	    border-top: 1px solid #bdbdbd;
+	    line-height: 17px;
+	    padding-top: 9px;
+        margin-top: 5%;
+    }
+
+    .post-teaser img {
+	    margin: 0 11px 11px 0;
+	    border: 1px solid #cacaca;
+	    padding: 3px;
+	    float: left;
+    }
+
+    .post-teaser .text{
+	    margin-left: 1%;
+        text-align:justify;
+    }
+
+    .post-teaser .text p {
+	    line-height: 23px;
+        height: 89px;
+    }
+
+    #Troc h2 {
+	    color: #646464;
+	    font-size: 25px;
+	    text-decoration: none;
+	    font-weight: bold;
+        padding-top:2%;
+    }
+
+    .author em {
+	    font:  18px Georgia, serif;
+	    color: #646464;
+	    margin-top: -3px;
+    }
+
+    .cat-date em{
+	    font:  18px Georgia, serif;
+	    color: #646464;
+	    text-decoration: none;
+    }
+
+    .cat-date a, .readMore a {
+	    font:  18px Georgia, serif;
+	    color: #646464;
+	    text-decoration: none;
+    }
+
+    .rating {
+       direction: rtl;
+       float: right;
+    }
+    .rating a {
+       color: #aaa;
+       text-decoration: none;
+       font-size: 2em;
+       transition: color .4s;
+    }
+    .rating a:hover,
+    .rating a:focus,
+    .rating a:hover ~ a,
+    .rating a:focus ~ a {
+       color: orange;
+       cursor: pointer;
+    }
+
+    /*CSS Admin*/
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@charset 'UTF-8';
+/* Base Styles */
+#cssmenu,
+#cssmenu ul,
+#cssmenu li,
+#cssmenu a
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 1;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+#cssmenu a {
+  line-height: 1.3;
+  padding: 6px 15px;
+}
+#cssmenu {
+  width: 200px;
+}
+#cssmenu > ul > li {
+  cursor: pointer;
+  background: #000;
+  border-bottom: 1px solid #797a80;
+}
+#cssmenu > ul > li:last-child {
+  border-bottom: 1px solid #3e3d3c;
+}
+#cssmenu > ul > li > a {
+  font-size: 13px;
+  display: block;
+  color: #ffffff;
+  text-shadow: 0 1px 1px #000;
+  background: #6a6b72;
+  background: -moz-linear-gradient(#6a6b72 0%, #4c4e53 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6a6b72), color-stop(100%, #4c4e53));
+  background: -webkit-linear-gradient(#6a6b72 0%, #4c4e53 100%);
+  background: linear-gradient(#6a6b72 0%, #4c4e53 100%);
+}
+#cssmenu > ul > li > a:hover {
+  text-decoration: none;
+}
+#cssmenu > ul > li.active {
+  border-bottom: none;
+}
+#cssmenu > ul > li.active > a {
+  background: #a5ce27;
+  background: -moz-linear-gradient(#a5ce27 0%, #709400 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5ce27), color-stop(100%, #709400));
+  background: -webkit-linear-gradient(#a5ce27 0%, #709400 100%);
+  background: linear-gradient(#a5ce27 0%, #709400 100%);
+  color: #4e5800;
+  text-shadow: 0 1px 1px #a5ce27;
+}
+#cssmenu > ul > li.has-sub > a:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 5px solid transparent;
+  border-left: 5px solid #ffffff;
+}
+#cssmenu > ul > li.has-sub.active > a:after {
+  right: 14px;
+  top: 12px;
+  border: 5px solid transparent;
+  border-top: 5px solid #4e5800;
+}
+/* Sub menu */
+#cssmenu ul ul {
+  padding: 0;
+  display: none;
+}
+#cssmenu ul ul a {
+  background: #efefef;
+  display: block;
+  color: #797979;
+  font-size: 13px;
+}
+#cssmenu ul ul li {
+  border-bottom: 1px solid #c9c9c9;
+}
+#cssmenu ul ul li.odd a {
+  background: #e5e5e5;
+}
+#cssmenu ul ul li:last-child {
+  border: none;
+}

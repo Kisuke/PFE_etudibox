@@ -107,6 +107,96 @@ INSERT INTO `eb_sub_category_bon_plan` VALUES (1,1,'Cinéma'),(2,1,'Musée'),(3,
 /*!40000 ALTER TABLE `eb_sub_category_bon_plan` ENABLE KEYS */;
 UNLOCK TABLES;
 
+
+--
+-- Table structure for table `eb_troc`
+--
+
+DROP TABLE IF EXISTS `eb_troc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `eb_troc` (
+  `id_eb_troc` int(11) NOT NULL AUTO_INCREMENT,
+  `eb_troc_title` varchar(45) NOT NULL,
+  `eb_troc_image_path` varchar(255) DEFAULT NULL,
+  `eb_user_id` int(11) DEFAULT NULL,
+  `eb_troc_category_id` int(11) NOT NULL,
+  `eb_troc_body` varchar(2000) DEFAULT NULL,
+  `eb_troc_date` datetime NOT NULL,
+  `eb_troc_sub_category_id` int(11) NOT NULL,
+  PRIMARY KEY (`id_eb_troc`),
+  UNIQUE KEY `id_eb_troc_UNIQUE` (`id_eb_troc`),
+  KEY `eb_user_id_idx` (`eb_user_id`),
+  KEY `fk_category_id_idx` (`eb_troc_category_id`),
+  KEY `fk_sub_category_id_idx` (`eb_troc_sub_category_id`),
+  CONSTRAINT `eb_user_tc_id` FOREIGN KEY (`eb_user_id`) REFERENCES `eb_user` (`eb_user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_category_tc_id` FOREIGN KEY (`eb_troc_category_id`) REFERENCES `eb_category_troc` (`eb_category_troc_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sub_category_tc_id` FOREIGN KEY (`eb_troc_sub_category_id`) REFERENCES `eb_sub_category_troc` (`eb_sub_category_troc_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eb_troc`
+--
+
+LOCK TABLES `eb_troc` WRITE;
+/*!40000 ALTER TABLE `eb_troc` DISABLE KEYS */;
+INSERT INTO `eb_troc` VALUES (1,'Meuble','.\\BDDFile\\Meuble.jpeg',1,1,' Meuble de salon presque tout neuf. <br/> Taille:50x30.<br/> Prix: 20 euros.','2013-12-12 08:09:00',1),(2,'Télévision écran plat','.\\BDDFile\\TV.jpg',1,2,'Télévision samsung 60x40<br/> Prix: 40 €. ','2014-01-05 13:47:00',3),(3,'Disque dur externe','.\\BDDFile\\Disque_dur.jpg',1,2,'Disque dur WD 1T<br/> Prix: 70€','2014-01-13 14:21:00',1);
+/*!40000 ALTER TABLE `eb_troc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `eb_category_troc`
+--
+
+DROP TABLE IF EXISTS `eb_category_troc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `eb_category_troc` (
+  `eb_category_troc_id` int(11) NOT NULL AUTO_INCREMENT,
+  `eb_category_troc` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`eb_category_troc_id`),
+  UNIQUE KEY `eb_category_troc_id_UNIQUE` (`eb_category_troc_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eb_category_troc`
+--
+
+LOCK TABLES `eb_category_troc` WRITE;
+/*!40000 ALTER TABLE `eb_category_troc` DISABLE KEYS */;
+INSERT INTO `eb_category_troc` VALUES (1,'Covoiturage'),(2,'Objet'),(3,'Logement'),(4,'Service');
+/*!40000 ALTER TABLE `eb_category_troc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `eb_sub_category_troc`
+--
+
+DROP TABLE IF EXISTS `eb_sub_category_troc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `eb_sub_category_troc` (
+  `eb_sub_category_troc_id` int(11) NOT NULL AUTO_INCREMENT,
+  `eb_category_troc_id` int(11) DEFAULT NULL,
+  `eb_sub_category_troc` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`eb_sub_category_troc_id`),
+  KEY `fk_category_troc_id_idx` (`eb_category_troc_id`),
+  CONSTRAINT `fk_category_troc_id` FOREIGN KEY (`eb_category_troc_id`) REFERENCES `eb_category_troc` (`eb_category_troc_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eb_sub_category_troc`
+--
+
+LOCK TABLES `eb_sub_category_troc` WRITE;
+/*!40000 ALTER TABLE `eb_sub_category_troc` DISABLE KEYS */;
+INSERT INTO `eb_sub_category_troc` VALUES (1,2,'Meuble'),(2,2,'Electronique'),(3,2,'PC');
+/*!40000 ALTER TABLE `eb_sub_category_troc` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `eb_user`
 --

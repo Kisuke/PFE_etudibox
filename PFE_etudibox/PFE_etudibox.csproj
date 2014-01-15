@@ -123,6 +123,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Administratif\AdministratifController.cs" />
     <Compile Include="Controllers\BonPlan\BonPlanController.cs" />
+    <Compile Include="Controllers\Troc\Troc.cs" />
     <Compile Include="Models\BonPlan\BonPlan.cs" />
     <Compile Include="Controllers\Inscription\Member.cs" />
     <Compile Include="Controllers\Inscription\InscriptionController.cs" />
