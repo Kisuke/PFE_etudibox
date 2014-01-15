@@ -42,7 +42,7 @@
                            <h2 style="margin-left:37%;color:black;font:bold";>Impôt</h2>
                     <br />
         <a href="Administratif/Impôt">
-            <img src="Styles/Images/Impot.png"style="height:58%; width:58%;margin-top:-15%;margin-left:20%"";/>
+            <img src="Styles/Images/Impot.png"style="height:58%; width:58%;margin-top:-15%;margin-left:20%";/>
         </a>
       
 </div>
@@ -115,14 +115,14 @@
          <li class='last'><a href='#'><span>Bourses gouvernementales</span></a></li>
       </ul>
    </li>
-   <li class='has-sub'><a href='#'><span>Pret</span></a>
+   <li class='has-sub'><a href='#'><span>Prêt</span></a>
       <ul>
-         <li><a href='#'><span>Pret Etudiant</span></a></li>
-         <li><a href='#'><span>Pret Permis A 1euros</span></a></li>
-         <li class='last'><a href='#'><span>Autres Prets</span></a></li>
+         <li><a href='#'><span>Prêt Etudiant</span></a></li>
+         <li><a href='#'><span>Prêt Permis A 1euros</span></a></li>
+         <li class='last'><a href='#'><span>Autres Prêts</span></a></li>
       </ul>
    </li>
-    <li><a href='#'><span>Impot</span></a></li>
+    <li><a href='#'><span>Impôt</span></a></li>
    <li class='has-sub'><a href='#'><span>Stage-VIE</span></a>
       <ul>
          <li><a href='#'><span>Efrei</span></a></li>
