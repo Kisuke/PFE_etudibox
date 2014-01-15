@@ -625,6 +625,7 @@ body
        cursor: pointer;
     }
 
+<<<<<<< HEAD
      /*CSS de Troc*/
 
     #menuTroc {
@@ -772,6 +773,8 @@ body
        cursor: pointer;
     }
 
+=======
+>>>>>>> 6ce60c9e17775d3232a33be63285824615fe869a
     /*CSS Admin*/
 
 @import url(http://fonts.googleapis.com/css?family=Lato);
