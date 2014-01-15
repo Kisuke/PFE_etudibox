@@ -19,7 +19,7 @@
         <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
     </asp:ContentPlaceHolder>
     <style>
-        
+
     </style>
 </head>
 <body>
@@ -39,7 +39,7 @@
                 </ul>
             </div>
      
-            <div id="sidebar" style="background-color: rgba(242, 242, 235, .85)">
+            <div id="sidebar" style="height: auto;background-color: rgba(242, 242, 235, .85)">
                     <%  if (Session["username"] != null)
                     { %>
                     <form id="form2" runat="server" action="/Signout">

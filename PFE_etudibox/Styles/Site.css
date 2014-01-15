@@ -226,16 +226,17 @@ body
 
 /* Bouton */
     input[type=submit] {
-        background-image: linear-gradient(rgb(254, 254, 254) 0%, rgb(240, 240, 240) 50%, rgb(230, 230, 230) 51%);
-        width: 65%;
-        padding: 3%;
-        border: 1px;
-        border-radius: 5px 10px 0px 5px;
-        box-shadow: 8px 8px 12px rgb(170, 170, 170);
-        color:grey;
-        text-decoration:none;
-        font-weight:bold;
-    }
+        border-style: none;
+    border-color: inherit;
+    border-width: 1px;
+    width: 65%;
+    padding: 3%;
+    border-radius: 5px 10px 0px 5px;
+    color: grey;
+    text-decoration: none;
+    font-weight: bold;
+    background-image: linear-gradient(rgb(254, 254, 254) 0%, rgb(240, 240, 240) 50%, rgb(230, 230, 230) 51%);
+}
 
     input[type=submit]:hover {
         background-image : linear-gradient(rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
@@ -274,7 +275,143 @@ body
         font-size: 200.01%;
         z-index:-1;
     }
+    #circle1 
+         {
+            width: 400px;
+            height: 400px;
+            position:absolute;
+            background-color:#1eb018;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85;
+            -moz-border-radius: 400px;
+            -webkit-border-radius: 400px;
+            border-radius: 400px;
+            list-style-type:none;
+            margin-top:100px;
+            z-index:-1;
+        }
+    #circle2 
+         {
+            width: 400px;
+            height: 400px;
+            position:absolute;
+            background-color:#6495ED;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85;
+            -moz-border-radius: 400px;
+            -webkit-border-radius: 400px;
+            border-radius: 400px;
+            list-style-type:none;
+            margin-left:600px;
+            margin-top:100px;
+            z-index:-1;
+        }
 
+          #circle3 
+         {
+            width: 400px;
+            height: 400px;
+            position:absolute;
+            background-color:#90EE90;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85;
+            -moz-border-radius: 400px;
+            -webkit-border-radius: 400px;
+            border-radius: 400px;
+            list-style-type:none;
+            margin-left:600px;
+            margin-top:100px;
+            z-index:-1;
+        }
+           #circle4 
+         {
+            width: 400px;
+            height: 400px;
+            position:absolute;
+            background-color:#FA8072;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85;
+            -moz-border-radius: 400px;
+            -webkit-border-radius: 400px;
+            border-radius: 400px;
+            list-style-type:none;
+            margin-left:600px;
+            margin-top:100px;
+            z-index:-1;
+        }
+            #circle5 
+         {
+            width: 400px;
+            height: 400px;
+            position:absolute;
+            background-color:#87CEEB;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85;
+            -moz-border-radius: 400px;
+            -webkit-border-radius: 400px;
+            border-radius: 400px;
+            list-style-type:none;
+            margin-left:600px;
+            margin-top:100px;
+            z-index:-1;
+        }
+             #circle6 
+         {
+            width: 400px;
+            height: 400px;
+            position:absolute;
+            background-color:#FFB6C1;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85;
+            -moz-border-radius: 400px;
+            -webkit-border-radius: 400px;
+            border-radius: 400px;
+            list-style-type:none;
+            margin-left:600px;
+            margin-top:100px;
+            z-index:-1;
+        }
+              #circle7 
+         {
+            width: 400px;
+            height: 400px;
+            position:absolute;
+            background-color:#40E0D0;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85;
+            -moz-border-radius: 400px;
+            -webkit-border-radius: 400px;
+            border-radius: 400px;
+            list-style-type:none;
+            margin-left:600px;
+            margin-top:100px;
+            z-index:-1;
+        }
+
+               #circle8
+         {
+            width: 400px;
+            height: 400px;
+            position:absolute;
+            background-color:#008080;
+            filter:alpha(opacity=85); 
+            -moz-opacity:0.85; 
+            opacity: 0.85;
+            -moz-border-radius: 400px;
+            -webkit-border-radius: 400px;
+            border-radius: 400px;
+            list-style-type:none;
+            margin-left:600px;
+            margin-top:100px;
+            z-index:-1;
+        }
 /* Type de menu vertical déroulant utilisé par BonPlan */            
     #menu-accordeon {
         padding:0;
@@ -487,3 +624,8 @@ body
        color: orange;
        cursor: pointer;
     }
+    /* CSS menu gauche administratif */
+      ul.niveau1 ul {background-color:white;display: none; position: absolute; left: 305px; width:200px; top: -1px; margin:0px; padding: 0px;border-radius: 5px 10px 0px 5px;box-shadow: 8px 8px 12px rgb(170, 170, 170);}
+         li.menuAdmin {list-style-type: none; position: relative; border-radius: 5px 10px 0px 5px;box-shadow: 8px 8px 12px rgb(170, 170, 170); width:300px; padding: 2px; margin: 0px;font-variant: small-caps;font-family: "Trebuchet MS", Verdana, Geneva, Arial;font-size:x-large;}
+         ul.niveau2 li:hover {background-color: #3EDA4D;}
+         li.menuAdmin:hover ul.niveau2 {display: block;} 
