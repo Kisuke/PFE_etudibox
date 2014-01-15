@@ -164,7 +164,6 @@
     <Content Include="Global.asax" />
     <Content Include="Styles\Images\Impot.png" />
     <Content Include="Styles\Images\Logement.png" />
-    <Content Include="Styles\Images\menu1.gif" />
     <Content Include="Styles\Images\Pret.png" />
     <Content Include="Styles\Images\Secu.png" />
     <Content Include="Styles\Images\Stage.png" />
