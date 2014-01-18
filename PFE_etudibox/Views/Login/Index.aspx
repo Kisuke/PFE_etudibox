@@ -3,12 +3,12 @@
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
     {
-        var username = Session["username"];
+        var id = Session["id"];
     }
 
     protected void Logout_Click()
     {
-        Session["username"] = null;
+        Session["id"] = null;
     }
     
 </script>
@@ -21,7 +21,7 @@
     </div>    
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="LateralContent" runat="server">
-    <%  if (Session["username"] == null)
+    <%  if (Session["id"] == null)
        { %>
         <div id="login">
             <form id="form1" runat="server">

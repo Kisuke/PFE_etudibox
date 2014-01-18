@@ -7,12 +7,12 @@ namespace PFE_etudibox.Controllers.Inscription
 {
     public class Member
     {
-        private String user_id { get; set; }
-        public String login { get; set; }
-        public String lastname { get; set; }
-        public String firstname { get; set; }
-        public String email { get; set; }
-        public String password { get; set; }
+        public String user_id { get; private set; }
+        public String login { get; private set; }
+        public String lastname { get; private set; }
+        public String firstname { get; private set; }
+        public String email { get; private set; }
+        public String password { get; private set; }
 
         public Member(String login, String lastname, String firstname, String email, String password)
         {
@@ -29,6 +29,12 @@ namespace PFE_etudibox.Controllers.Inscription
             this.user_id = user_id;
             this.lastname = lastname;
             this.firstname = firstname;
+        }
+
+        public Member(string user_id)
+        {
+            // TODO: Complete member initialization
+            this.user_id = user_id;
         }
 
     }

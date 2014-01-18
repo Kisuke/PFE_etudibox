@@ -8,6 +8,7 @@ using PFE_etudibox.Models.Login;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Text;
+using PFE_etudibox.Controllers.Inscription;
 
 namespace PFE_etudibox.Controllers.Login
 {
@@ -18,9 +19,9 @@ namespace PFE_etudibox.Controllers.Login
 
         public ActionResult Index(string email, string password)
         {
-            var test = Session["username"];
+            var test = Session["id"];
             //On vérifie que l'utilisateur n'est pas connecté
-            if(Session["username"] == null)
+            if(Session["id"] == null)
             {
                 //On vérifie que les champs sont bien remplis
                 if (!(password == null) && !(email == null))
@@ -30,13 +31,13 @@ namespace PFE_etudibox.Controllers.Login
                     password = md5.getMd5Hash(password);
 
                     //Authentifiction
-                    int result = Connect(email, password);
+                    int[] resultList = Connect(email, password);
                    
-                    //Vérification réussi
-                    if (result == 1)
+                    //Vérification réussie
+                    if (resultList[0] == 1)
                     {
                         //Ouverture d'une session
-                        Session["username"] = email;
+                        Session["id"] = resultList[1].ToString();
                     }
                     else
                     {
@@ -55,14 +56,14 @@ namespace PFE_etudibox.Controllers.Login
         * Input : string email, string password
         * Output: int result
         * */
-        private int Connect(string email, string password)
+        private int[] Connect(string email, string password)
         {
             LoginModel lm = new LoginModel();
             //On se connecte à la base de données
             lm.Connect();
             //On vérifie si l'utilisateur et le mot de passe existent en bdd
-            int result = lm.Query(email, password);
-            return result;
+            int[] resultList = lm.Query(email, password);
+            return resultList;
         }
 
         /**
@@ -73,7 +74,7 @@ namespace PFE_etudibox.Controllers.Login
         * */
         protected void Logout_Click()
         {
-            Session["username"] = null;
+            Session["id"] = null;
 
         }
     }

@@ -81,6 +81,31 @@ INSERT INTO `eb_category_bon_plan` VALUES (1,'Culture'),(2,'Restaurant'),(3,'Car
 UNLOCK TABLES;
 
 --
+-- Table structure for table `eb_category_troc`
+--
+
+DROP TABLE IF EXISTS `eb_category_troc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `eb_category_troc` (
+  `eb_category_troc_id` int(11) NOT NULL AUTO_INCREMENT,
+  `eb_category_troc` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`eb_category_troc_id`),
+  UNIQUE KEY `eb_category_troc_id_UNIQUE` (`eb_category_troc_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eb_category_troc`
+--
+
+LOCK TABLES `eb_category_troc` WRITE;
+/*!40000 ALTER TABLE `eb_category_troc` DISABLE KEYS */;
+INSERT INTO `eb_category_troc` VALUES (1,'Covoiturage'),(2,'Objet'),(3,'Logement'),(4,'Service');
+/*!40000 ALTER TABLE `eb_category_troc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `eb_sub_category_bon_plan`
 --
 
@@ -107,6 +132,32 @@ INSERT INTO `eb_sub_category_bon_plan` VALUES (1,1,'Cinéma'),(2,1,'Musée'),(3,
 /*!40000 ALTER TABLE `eb_sub_category_bon_plan` ENABLE KEYS */;
 UNLOCK TABLES;
 
+--
+-- Table structure for table `eb_sub_category_troc`
+--
+
+DROP TABLE IF EXISTS `eb_sub_category_troc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `eb_sub_category_troc` (
+  `eb_sub_category_troc_id` int(11) NOT NULL AUTO_INCREMENT,
+  `eb_category_troc_id` int(11) DEFAULT NULL,
+  `eb_sub_category_troc` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`eb_sub_category_troc_id`),
+  KEY `fk_category_troc_id_idx` (`eb_category_troc_id`),
+  CONSTRAINT `fk_category_troc_id` FOREIGN KEY (`eb_category_troc_id`) REFERENCES `eb_category_troc` (`eb_category_troc_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eb_sub_category_troc`
+--
+
+LOCK TABLES `eb_sub_category_troc` WRITE;
+/*!40000 ALTER TABLE `eb_sub_category_troc` DISABLE KEYS */;
+INSERT INTO `eb_sub_category_troc` VALUES (1,2,'Meuble'),(2,2,'Electronique'),(3,2,'PC');
+/*!40000 ALTER TABLE `eb_sub_category_troc` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `eb_troc`
@@ -132,7 +183,7 @@ CREATE TABLE `eb_troc` (
   CONSTRAINT `eb_user_tc_id` FOREIGN KEY (`eb_user_id`) REFERENCES `eb_user` (`eb_user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_category_tc_id` FOREIGN KEY (`eb_troc_category_id`) REFERENCES `eb_category_troc` (`eb_category_troc_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_sub_category_tc_id` FOREIGN KEY (`eb_troc_sub_category_id`) REFERENCES `eb_sub_category_troc` (`eb_sub_category_troc_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,60 +192,8 @@ CREATE TABLE `eb_troc` (
 
 LOCK TABLES `eb_troc` WRITE;
 /*!40000 ALTER TABLE `eb_troc` DISABLE KEYS */;
-INSERT INTO `eb_troc` VALUES (1,'Meuble','.\\BDDFile\\Meuble.jpeg',1,1,' Meuble de salon presque tout neuf. <br/> Taille:50x30.<br/> Prix: 20 euros.','2013-12-12 08:09:00',1),(2,'Télévision écran plat','.\\BDDFile\\TV.jpg',1,2,'Télévision samsung 60x40<br/> Prix: 40 €. ','2014-01-05 13:47:00',3),(3,'Disque dur externe','.\\BDDFile\\Disque_dur.jpg',1,2,'Disque dur WD 1T<br/> Prix: 70€','2014-01-13 14:21:00',1);
+INSERT INTO `eb_troc` VALUES (1,'Meuble','.\\BDDFile\\Meuble.jpeg',1,2,' Meuble de salon presque tout neuf. <br/> Taille:50x30.<br/> Prix: 20 euros.','2013-12-12 08:09:00',1),(2,'Télévision écran plat','.\\BDDFile\\TV.jpg',1,2,'Télévision samsung 60x40<br/> Prix: 40 €. ','2014-01-05 13:47:00',2),(3,'Disque dur externe','.\\BDDFile\\Disque_dur.jpg',1,2,'Disque dur WD 1T<br/> Prix: 70€','2014-01-13 14:21:00',3);
 /*!40000 ALTER TABLE `eb_troc` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `eb_category_troc`
---
-
-DROP TABLE IF EXISTS `eb_category_troc`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `eb_category_troc` (
-  `eb_category_troc_id` int(11) NOT NULL AUTO_INCREMENT,
-  `eb_category_troc` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`eb_category_troc_id`),
-  UNIQUE KEY `eb_category_troc_id_UNIQUE` (`eb_category_troc_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `eb_category_troc`
---
-
-LOCK TABLES `eb_category_troc` WRITE;
-/*!40000 ALTER TABLE `eb_category_troc` DISABLE KEYS */;
-INSERT INTO `eb_category_troc` VALUES (1,'Covoiturage'),(2,'Objet'),(3,'Logement'),(4,'Service');
-/*!40000 ALTER TABLE `eb_category_troc` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `eb_sub_category_troc`
---
-
-DROP TABLE IF EXISTS `eb_sub_category_troc`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `eb_sub_category_troc` (
-  `eb_sub_category_troc_id` int(11) NOT NULL AUTO_INCREMENT,
-  `eb_category_troc_id` int(11) DEFAULT NULL,
-  `eb_sub_category_troc` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`eb_sub_category_troc_id`),
-  KEY `fk_category_troc_id_idx` (`eb_category_troc_id`),
-  CONSTRAINT `fk_category_troc_id` FOREIGN KEY (`eb_category_troc_id`) REFERENCES `eb_category_troc` (`eb_category_troc_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `eb_sub_category_troc`
---
-
-LOCK TABLES `eb_sub_category_troc` WRITE;
-/*!40000 ALTER TABLE `eb_sub_category_troc` DISABLE KEYS */;
-INSERT INTO `eb_sub_category_troc` VALUES (1,2,'Meuble'),(2,2,'Electronique'),(3,2,'PC');
-/*!40000 ALTER TABLE `eb_sub_category_troc` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -235,4 +234,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-01-15 13:13:52
+-- Dump completed on 2014-01-18 23:14:11

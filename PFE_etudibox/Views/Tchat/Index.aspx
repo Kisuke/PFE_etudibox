@@ -1,13 +1,13 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Tchat.TchatModel>" %>
 
 <script runat="server">
-    //protected void Page_Load(object sender, EventArgs e)
-    //{
-        //if (Session["username"] == null)
-        //{
-        //    Response.Redirect("Login");
-      //  }
-    //}
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["id"] == null)
+        {
+            Response.Redirect("Login");
+        }
+    }
     
 </script>
 

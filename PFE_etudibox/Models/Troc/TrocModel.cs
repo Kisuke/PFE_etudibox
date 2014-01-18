@@ -32,10 +32,24 @@ namespace PFE_etudibox.Models.TrocModel
        * Input :
        * Output:
        * */
-        public List<Troc> QueryList()
+        public List<Troc> QueryList(int categoryId, int subCategoryId)
         {
             //Query to execute 
-            string query = "SELECT BP.*, USER.eb_user_lastname, USER.eb_user_firstname, CBP.eb_category_troc, SCBP.eb_sub_category_troc FROM etudibox.eb_troc AS BP LEFT JOIN etudibox.eb_user AS USER ON USER.eb_user_id = BP.eb_user_id LEFT JOIN etudibox.eb_category_troc AS CBP ON CBP.eb_category_troc_id = BP.eb_troc_category_id LEFT JOIN etudibox.eb_sub_category_troc AS SCBP ON SCBP.eb_sub_category_troc_id = BP.eb_troc_sub_category_id AND SCBP.eb_category_troc_id = CBP.eb_category_troc_id;";
+            string query = "SELECT T.*, USER.eb_user_lastname, USER.eb_user_firstname, CT.eb_category_troc, SCT.eb_sub_category_troc FROM etudibox.eb_troc AS T LEFT JOIN etudibox.eb_user AS USER ON USER.eb_user_id = T.eb_user_id LEFT JOIN etudibox.eb_category_troc AS CT ON CT.eb_category_troc_id = T.eb_troc_category_id LEFT JOIN etudibox.eb_sub_category_troc AS SCT ON SCT.eb_sub_category_troc_id = T.eb_troc_sub_category_id AND SCT.eb_category_troc_id = CT.eb_category_troc_id";
+            
+            //On ajoute où non des critères supplémentaires de sélection  à la reqête (catégorie, sous catégorie)
+            if (categoryId > 0 && subCategoryId == 0)
+            {
+                query += " WHERE T.eb_troc_category_id= " + categoryId + ";";
+            }
+            else if (categoryId > 0 && subCategoryId > 0)
+            {
+                query += " WHERE T.eb_troc_category_id= " + categoryId + " AND T.eb_troc_sub_category_id= " + subCategoryId + ";";
+            }
+            else
+            {
+                query += ";";
+            }
             QueryResult dataList = db.Query(query);
 
             // Initialisation & Declaration
@@ -45,7 +59,9 @@ namespace PFE_etudibox.Models.TrocModel
             String[] title = new String[nbRow];
             String[] imagePath = new String[nbRow];
             String[] user_id = new String[nbRow];
+            String[] idCategory = new String[nbRow];
             String[] category = new String[nbRow];
+            String[] idSubCategory = new String[nbRow];
             String[] subCategory = new String[nbRow];
             String[] body = new String[nbRow];
             String[] lastname = new String[nbRow];
@@ -75,6 +91,9 @@ namespace PFE_etudibox.Models.TrocModel
                         case 3:
                             user_id[i] = Convert.ToString(value);
                             break;
+                        case 4:
+                            idCategory[i] = Convert.ToString(value);
+                            break;
                         case 5:
                             body[i] = Convert.ToString(value);
                             break;
@@ -82,22 +101,25 @@ namespace PFE_etudibox.Models.TrocModel
                             date[i] = Convert.ToDateTime(value);
                             break;
                         case 7:
-                            lastname[i] = Convert.ToString(value);
+                            idSubCategory[i] = Convert.ToString(value);
                             break;
                         case 8:
-                            firstname[i] = Convert.ToString(value);
+                            lastname[i] = Convert.ToString(value);
                             break;
                         case 9:
-                            category[i] = Convert.ToString(value);
+                            firstname[i] = Convert.ToString(value);
                             break;
                         case 10:
-                            subCategory[i] = Convert.ToString(value);
+                            category[i] = Convert.ToString(value);
                             break;
+                        case 11:
+                            subCategory[i] = Convert.ToString(value);
+                            break; 
                         default:
                             break;
                     }
                 }
-                this.trocList.Add(new Troc(idtroc[i], new Member(user_id[i], lastname[i], firstname[i]), title[i], body[i], category[i], subCategory[i], imagePath[i], date[i]));
+                this.trocList.Add(new Troc(idtroc[i], new Member(user_id[i], lastname[i], firstname[i]), title[i], body[i], idCategory[i], category[i], idSubCategory[i], subCategory[i], imagePath[i], date[i]));
 
                 //Reinitialization (à faire)
             }

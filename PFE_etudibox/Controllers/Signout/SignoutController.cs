@@ -13,7 +13,7 @@ namespace PFE_etudibox.Controllers.Signout
 
         public ActionResult Index()
         {
-            Session["username"] = null;
+            Session["id"] = null;
             Response.Redirect("Login");
             return View();
         }
