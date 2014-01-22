@@ -1,4 +1,4 @@
-﻿using PFE_etudibox.Controllers.Inscription;
+﻿using PFE_etudibox.VO.MemberVO;
 using PFE_etudibox.Models.Base;
 using System;
 using System.Collections.Generic;

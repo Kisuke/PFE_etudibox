@@ -18,7 +18,7 @@
         <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
     </title>
     <asp:ContentPlaceHolder ID="Stylesheets" runat="server">
-        <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+        <link href="./Styles/Site.css" rel="stylesheet" type="text/css" />
     </asp:ContentPlaceHolder>
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -85,33 +85,10 @@
                 <li><%= Html.ActionLink("Tchat", "Index", "Tchat")%></li>
             </ul>
         </div>
-        <!--<ul id="menu-accordeon">
-                <li>
-                    <a href="BonPlan?id=1">Culture</a>
-                    <ul>
-                        <li><a href="BonPlan?id=1,1">Cinéma</a></li>
-                        <li><a href="BonPlan?id=1,2">Musée</a></li>
-                        <li><a href="BonPlan?id=1,3">Opéra</a></li>
-                        <li><a href="BonPlan?id=1,4">Théâtre</a></li>
-                        <li><a href="BonPlan?id=1,5">Exposition</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="BonPlan?id=2">Restaurant</a>
-                </li>
-                <li>
-                    <a href="BonPlan?id=3">Carte</a>
-                    <ul>
-                        <li><a href="BonPlan?id=3,5">Carte Imagine R</a></li>
-                        <li><a href="BonPlan?id=3,6">Carte Forest Hill</a></li>
-                        <li><a href="BonPlan?id=3,7">Carte étudiante ISIC</a></li>
-                    </ul>
-                </li>
-        </ul>-->
         <div id="sidebar" style="height: auto; background-color: rgba(242, 242, 235, .85)">
             <%  if (Session["id"] != null)
                 { %>
-            <form id="form2" runat="server" action="/Signout">
+            <form id="form" runat="server" action="/Signout">
                 <br />
                 <asp:Button ID="Logout" runat="server" Text="Se déconnecter" />
             </form>

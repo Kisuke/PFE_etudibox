@@ -1,5 +1,6 @@
 ﻿using PFE_etudibox.Controllers.Login;
 using PFE_etudibox.Models.Inscription;
+using PFE_etudibox.VO.MemberVO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

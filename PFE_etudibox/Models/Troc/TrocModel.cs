@@ -1,6 +1,6 @@
-﻿using PFE_etudibox.Controllers.Inscription;
+﻿using PFE_etudibox.VO.MemberVO;
 using PFE_etudibox.Models.Base;
-using PFE_etudibox.Models.TrocVO;
+using PFE_etudibox.VO.TrocVO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,20 +35,20 @@ namespace PFE_etudibox.Models.TrocModel
         public List<Troc> QueryList(int categoryId, int subCategoryId)
         {
             //Query to execute 
-            string query = "SELECT T.*, USER.eb_user_lastname, USER.eb_user_firstname, CT.eb_category_troc, SCT.eb_sub_category_troc FROM etudibox.eb_troc AS T LEFT JOIN etudibox.eb_user AS USER ON USER.eb_user_id = T.eb_user_id LEFT JOIN etudibox.eb_category_troc AS CT ON CT.eb_category_troc_id = T.eb_troc_category_id LEFT JOIN etudibox.eb_sub_category_troc AS SCT ON SCT.eb_sub_category_troc_id = T.eb_troc_sub_category_id AND SCT.eb_category_troc_id = CT.eb_category_troc_id";
+            string query = "SELECT T.*, USER.eb_user_lastname, USER.eb_user_firstname, USER.eb_user_email, CT.eb_category_troc, SCT.eb_sub_category_troc FROM etudibox.eb_troc AS T LEFT JOIN etudibox.eb_user AS USER ON USER.eb_user_id = T.eb_user_id LEFT JOIN etudibox.eb_category_troc AS CT ON CT.eb_category_troc_id = T.eb_troc_category_id LEFT JOIN etudibox.eb_sub_category_troc AS SCT ON SCT.eb_sub_category_troc_id = T.eb_troc_sub_category_id AND SCT.eb_category_troc_id = CT.eb_category_troc_id";
             
             //On ajoute où non des critères supplémentaires de sélection  à la reqête (catégorie, sous catégorie)
             if (categoryId > 0 && subCategoryId == 0)
             {
-                query += " WHERE T.eb_troc_category_id= " + categoryId + ";";
+                query += " WHERE T.eb_troc_category_id= " + categoryId + " ORDER BY T.eb_troc_date DESC;";
             }
             else if (categoryId > 0 && subCategoryId > 0)
             {
-                query += " WHERE T.eb_troc_category_id= " + categoryId + " AND T.eb_troc_sub_category_id= " + subCategoryId + ";";
+                query += " WHERE T.eb_troc_category_id= " + categoryId + " AND T.eb_troc_sub_category_id= " + subCategoryId + " ORDER BY T.eb_troc_date DESC;";
             }
             else
             {
-                query += ";";
+                query += " ORDER BY T.eb_troc_date DESC;";
             }
             QueryResult dataList = db.Query(query);
 
@@ -66,6 +66,7 @@ namespace PFE_etudibox.Models.TrocModel
             String[] body = new String[nbRow];
             String[] lastname = new String[nbRow];
             String[] firstname = new String[nbRow];
+            String[] email = new String[nbRow];
             DateTime[] date = new DateTime[nbRow];
 
             //We look over the rows
@@ -110,16 +111,19 @@ namespace PFE_etudibox.Models.TrocModel
                             firstname[i] = Convert.ToString(value);
                             break;
                         case 10:
-                            category[i] = Convert.ToString(value);
+                            email[i] = Convert.ToString(value);
                             break;
                         case 11:
+                            category[i] = Convert.ToString(value);
+                            break;
+                        case 12:
                             subCategory[i] = Convert.ToString(value);
                             break; 
                         default:
                             break;
                     }
                 }
-                this.trocList.Add(new Troc(idtroc[i], new Member(user_id[i], lastname[i], firstname[i]), title[i], body[i], idCategory[i], category[i], idSubCategory[i], subCategory[i], imagePath[i], date[i]));
+                this.trocList.Add(new Troc(idtroc[i], new Member(user_id[i], lastname[i], firstname[i], email[i]), title[i], body[i], idCategory[i], category[i], idSubCategory[i], subCategory[i], imagePath[i], date[i]));
 
                 //Reinitialization (à faire)
             }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PFE_etudibox.Models.BonPlanVO.BonPlan>>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PFE_etudibox.VO.BonPlanVO.BonPlan>>" %>
 
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
@@ -12,9 +12,8 @@
 </script>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
-
     <div id="menuBonPlan">
-        <a href="#">
+        <a href="<%: Url.Action("Create", "BonPlan")%>">
             <img id="plus" alt="+" src="./Styles/Images/plus.jpg" />
             Ajoutez un bon plan</a>
         <form id="Tri" role="checkbox">
@@ -36,8 +35,7 @@
         <%
             if (bonPlan.member.user_id.Equals((String)Session["id"]))
             {%>
-             <a href="#" style="float: right; margin-top: -5%;">
-            <img id="deleteButton" alt="Supprimer" src="./Styles/Images/supprimer-icone.png" /></a>
+             <a href="<%: Url.Action("Delete", "BonPlan", new { id=bonPlan.idBonplan})%>" style="float: right; margin-top: -5%;"><img id="deleteButton" alt="Supprimer" src="./Styles/Images/supprimer-icone.png" /></a>
         <%}%>
         <div class="cat-date">
             <span class="posted">Posté dans: </span>
@@ -53,7 +51,7 @@
                 <p><%=bonPlan.bodyBonPlan%></p>
                 <div class="readMore">
                     <span>Auteur: </span>
-                    <em><a href="#"><%=bonPlan.member.firstname%> <%=bonPlan.member.lastname%> </a></em>
+                    <em><a href="mailto:<%=bonPlan.member.email%>"><%=bonPlan.member.firstname%> <%=bonPlan.member.lastname%> </a></em>
                     <div class="rating">
                         <a href="#5" title="Donner 5 étoiles">☆</a>
                         <a href="#4" title="Donner 4 étoiles">☆</a>

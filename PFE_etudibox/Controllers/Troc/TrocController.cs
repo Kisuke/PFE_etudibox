@@ -1,5 +1,5 @@
 ﻿using PFE_etudibox.Models.TrocModel;
-using PFE_etudibox.Models.TrocVO;
+using PFE_etudibox.VO.TrocVO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

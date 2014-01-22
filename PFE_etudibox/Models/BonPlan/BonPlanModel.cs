@@ -1,6 +1,7 @@
 ﻿using PFE_etudibox.Controllers.Inscription;
 using PFE_etudibox.Models.Base;
-using PFE_etudibox.Models.BonPlanVO;
+using PFE_etudibox.VO.BonPlanVO;
+using PFE_etudibox.VO.MemberVO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,20 +36,20 @@ namespace PFE_etudibox.Models.BonPlanModel
         public List<BonPlan> QueryList(int categoryId, int subCategoryId) 
         {
             //Query to execute 
-            string query = "SELECT BP.*, USER.eb_user_lastname, USER.eb_user_firstname, CBP.eb_category_bon_plan, SCBP.eb_sub_category_bon_plan FROM etudibox.eb_bon_plan AS BP LEFT JOIN etudibox.eb_user AS USER ON USER.eb_user_id = BP.eb_user_id LEFT JOIN etudibox.eb_category_bon_plan AS CBP ON CBP.eb_category_bon_plan_id = BP.eb_bon_plan_category_id LEFT JOIN etudibox.eb_sub_category_bon_plan AS SCBP ON SCBP.eb_sub_category_bon_plan_id = BP.eb_bon_plan_sub_category_id AND SCBP.eb_category_bon_plan_id = CBP.eb_category_bon_plan_id";
+            string query = "SELECT BP.*, USER.eb_user_lastname, USER.eb_user_firstname, USER.eb_user_email, CBP.eb_category_bon_plan, SCBP.eb_sub_category_bon_plan FROM etudibox.eb_bon_plan AS BP LEFT JOIN etudibox.eb_user AS USER ON USER.eb_user_id = BP.eb_user_id LEFT JOIN etudibox.eb_category_bon_plan AS CBP ON CBP.eb_category_bon_plan_id = BP.eb_bon_plan_category_id LEFT JOIN etudibox.eb_sub_category_bon_plan AS SCBP ON SCBP.eb_sub_category_bon_plan_id = BP.eb_bon_plan_sub_category_id AND SCBP.eb_category_bon_plan_id = CBP.eb_category_bon_plan_id";
 
             //On ajoute où non des critères supplémentaires de sélection  à la reqête (catégorie, sous catégorie)
             if (categoryId > 0 &&  subCategoryId==0)
             {
-                query += " WHERE BP.eb_bon_plan_category_id= "+categoryId+";";
+                query += " WHERE BP.eb_bon_plan_category_id= "+categoryId+" ORDER BY BP.eb_bon_plan_date DESC;";
             }
             else if (categoryId > 0 && subCategoryId > 0)
             {
-                query += " WHERE BP.eb_bon_plan_category_id= " + categoryId + " AND BP.eb_bon_plan_sub_category_id= " + subCategoryId + ";";
+                query += " WHERE BP.eb_bon_plan_category_id= " + categoryId + " AND BP.eb_bon_plan_sub_category_id= " + subCategoryId + " ORDER BY BP.eb_bon_plan_date DESC;";
             }
             else
             {
-                query += ";";
+                query += " ORDER BY BP.eb_bon_plan_date DESC;";
             }
             QueryResult dataList = db.Query(query);
 
@@ -65,7 +66,8 @@ namespace PFE_etudibox.Models.BonPlanModel
             String[] subCategory = new String[nbRow]; 
             String[] body = new String[nbRow]; 
             String[] lastname = new String[nbRow]; 
-            String[] firstname = new String[nbRow]; 
+            String[] firstname = new String[nbRow];
+            String[] email = new String[nbRow]; 
             DateTime[] date = new DateTime[nbRow];
             String[] link = new String[nbRow]; 
             
@@ -114,20 +116,30 @@ namespace PFE_etudibox.Models.BonPlanModel
                             firstname[i] = Convert.ToString(value);
                             break;
                         case 11:
-                            category[i] = Convert.ToString(value);
+                            email[i] = Convert.ToString(value);
                             break;
                         case 12:
+                            category[i] = Convert.ToString(value);
+                            break;
+                        case 13:
                             subCategory[i] = Convert.ToString(value);
                             break;
                         default:
                              break;
                      }
                  }
-                 this.bonPlanList.Add(new BonPlan(idbonplan[i], new Member(user_id[i], lastname[i], firstname[i]), title[i], body[i], idCategory[i], category[i], idSubCategory[i], subCategory[i], imagePath[i],  link[i], date[i]));
+                 this.bonPlanList.Add(new BonPlan(idbonplan[i], new Member(user_id[i], lastname[i], firstname[i], email[i]), title[i], body[i], idCategory[i], category[i], idSubCategory[i], subCategory[i], imagePath[i],  link[i], date[i]));
 
                 //Reinitialization (à faire)
             }
             return bonPlanList;
         }
-     }
+
+        public void Delete(int idBonPlan)
+        {
+            //Query to execute 
+            string query = "DELETE FROM etudibox.eb_bon_plan WHERE id_eb_bon_plan = " + idBonPlan + " ;";
+            QueryResult dataList = db.Query(query);
+        }
+    }
 }

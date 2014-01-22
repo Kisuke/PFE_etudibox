@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PFE_etudibox.Models.TrocVO.Troc>>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<IEnumerable<PFE_etudibox.VO.TrocVO.Troc>>" %>
 
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
@@ -43,7 +43,7 @@
         <div class="cat-date">
             <span class="posted">Posté dans: </span>
             <em><a href="Troc?id=<%=troc.idCategoryTroc%>"><%=troc.categoryTroc%></a></em>,
-                    <em><a href="Troc?id=<%=troc.idSubCategoryTroc%>"><%=troc.subCategoryTroc%></a></em>
+                    <em><a href="Troc?id=<%=troc.idCategoryTroc%>,<%=troc.idSubCategoryTroc%>"><%=troc.subCategoryTroc%></a></em>
             <span class="date">&nbsp;&nbsp;Date: 
 			        <em><%=troc.dateTroc%></em>
             </span>
@@ -54,14 +54,7 @@
                 <p><%=troc.bodyTroc%></p>
                 <div class="readMore">
                     <span>Auteur: </span>
-                    <em><a href="#"><%=troc.member.firstname%> <%=troc.member.lastname%> </a></em>
-                    <div class="rating">
-                        <a href="#5" title="Donner 5 étoiles">☆</a>
-                        <a href="#4" title="Donner 4 étoiles">☆</a>
-                        <a href="#3" title="Donner 3 étoiles">☆</a>
-                        <a href="#2" title="Donner 2 étoiles">☆</a>
-                        <a href="#1" title="Donner 1 étoile">☆</a>
-                    </div>
+                    <em><a href="mailto:<%=troc.member.email%>"><%=troc.member.firstname%> <%=troc.member.lastname%> </a></em>
                     <br />
                 </div>
             </div>

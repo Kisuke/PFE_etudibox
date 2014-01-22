@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master"  Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Inscription.InscriptionModel>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Modele.Master"  AutoEventWireup="false" Inherits="System.Web.Mvc.ViewPage<PFE_etudibox.Models.Inscription.InscriptionModel>" %>
 
 <script runat="server">
     

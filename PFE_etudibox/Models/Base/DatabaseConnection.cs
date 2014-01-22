@@ -82,7 +82,6 @@ namespace PFE_etudibox.Models.Base
         {
 
             QueryResult queryResult = null;
-            //String result = null;
             //open connection
             if (this.OpenConnection() == true)
             {
@@ -90,7 +89,6 @@ namespace PFE_etudibox.Models.Base
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Execute command
-                cmd.ExecuteNonQuery();
                 queryResult = new QueryResult(cmd.ExecuteReader());
                 queryResult.Initialize();
              

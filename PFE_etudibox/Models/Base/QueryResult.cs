@@ -33,19 +33,8 @@ namespace PFE_etudibox.Models.Base
         * */
         public void Initialize()
         {
-            //this.reader.Read();
-
             //On itinitialise le nombre de champ
             this.FieldNumber = reader.FieldCount;
-            /*if (this.FieldNumber > 0)
-            {
-                List<Object> tempList = new List<Object>();
-                for (int i = 0; i < this.FieldNumber; i++)
-                {
-                    tempList.Add(reader.GetValue(i));
-                }
-                this.dataList.Add(tempList);
-            }*/
             do
             {
                 if (reader.HasRows)
@@ -63,7 +52,6 @@ namespace PFE_etudibox.Models.Base
             } while (reader.NextResult());
           
            
-           // this.dataList.Add(test2List);
             this.initialized = true;
 
              //On itinitialise le nombre de ligne

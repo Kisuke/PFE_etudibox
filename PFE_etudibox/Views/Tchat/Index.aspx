@@ -12,13 +12,49 @@
 </script>
 
 <asp:Content ID="Content" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
+    <div id="Tchat">
         <br />
         <h1>Tchat</h1>
+
+         <div id="header">
+        SignalR Chat Room
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <div id="divContainer">
+        <div id="divLogin" class="login">
+            <div>
+                Your Name:<br />
+                <input id="txtNickName" type="text" class="textBox" />
+            </div>
+            <div id="divButton">
+                <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />
+            </div>
         </div>
 
-        
+        <div id="divChat" class="chatRoom">
+            <div class="title">
+                Welcome to Chat Room [<span id='spanUser'></span>]
 
+            </div>
+            <div class="content">
+                <div id="divChatWindow" class="chatWindow">
+                </div>
+                <div id="divusers" class="users">
+                </div>
+            </div>
+            <div class="messageBar">
+                <input class="textbox" type="text" id="txtMessage" />
+                <input id="btnSendMsg" type="button" value="Send" class="submitButton" />
+            </div>
+        </div>
+
+        <input id="hdId" type="hidden" />
+        <input id="hdUserName" type="hidden" />
+    </div>
+    </div>
 
     <script src="<%=ResolveClientUrl("~/Scripts/jquery-1.6.4.min.js")%>"></script>
 
@@ -27,15 +63,9 @@
     <script src="<%=ResolveClientUrl("~/Scripts/ui/jquery.ui.mouse.js")%>"></script>
     <script src="<%=ResolveClientUrl("~/Scripts/ui/jquery.ui.mouse.js")%>"></script>
     <script src="<%=ResolveClientUrl("~/Scripts/ui/jquery.ui.resizable.js")%>"></script>
-
-
-
-   
     <script src="<%=ResolveClientUrl("~/Scripts/jquery.signalR-1.1.4.js")%>"></script>
-    
-
     <script src="<%=ResolveClientUrl("~/signalr/hubs")%>"></script>
-    
+
     <script type="text/javascript">
 
         $(function () {
@@ -305,47 +335,5 @@
         }
 
     </script>
-    
 
-
-    <div id="header">
-        SignalR Chat Room
-    </div>
-    <br />
-    <br />
-    <br />
-
-    <div id="divContainer">
-        <div id="divLogin" class="login">
-            <div>
-                Your Name:<br />
-            <input id="txtNickName" type="text" class="textBox" />
-            </div>
-            <div id="divButton">
-                <input id="btnStartChat" type="button" class="submitButton" value="Start Chat" />
-            </div>
-        </div>
-
-        <div id="divChat" class="chatRoom">
-            <div class="title">
-                Welcome to Chat Room [<span id='spanUser'></span>]
-
-            </div>
-            <div class="content">
-                <div id="divChatWindow" class="chatWindow">
-                </div>
-                <div id="divusers" class="users">
-                </div>
-            </div>
-            <div class="messageBar">
-                <input class="textbox" type="text" id="txtMessage" />
-                <input id="btnSendMsg" type="button" value="Send" class="submitButton" />
-            </div>
-        </div>
-
-        <input id="hdId" type="hidden" />
-        <input id="hdUserName" type="hidden" />
-    </div>
-
-
-    </asp:Content>
+</asp:Content>
