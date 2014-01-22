@@ -285,6 +285,7 @@ input[type=submit] {
     position: absolute;
     border-radius: 50%;
     margin-top: 4%;
+
 }
 
 #circle2 {
@@ -293,11 +294,11 @@ input[type=submit] {
     position: absolute;
     border-radius: 50%;
     margin-top: 4%;
-    margin-left: 23%;
+    margin-left: 25%;
 }
 
 #circle3 {
-    margin-left: 46%;
+    margin-left: 50%;
     width: 22%;
     height: 210px;
     margin-top: 4%;
@@ -306,7 +307,7 @@ input[type=submit] {
 }
 
 #circle4 {
-    margin-left: 69%;
+    margin-left: 75%;
     width: 22%;
     height: 210px;
     position: absolute;
@@ -327,7 +328,7 @@ input[type=submit] {
     width: 22%;
     height: 210px;
     position: absolute;
-    margin-left: 35%;
+    margin-left: 37%;
     margin-top: 26%;
     border-radius: 50%;
 }
@@ -336,7 +337,7 @@ input[type=submit] {
     width: 22%;
     height: 210px;
     position: absolute;
-    margin-left: 59%;
+    margin-left: 63%;
     margin-top: 26%;
     border-radius: 50%;
 }
@@ -346,7 +347,7 @@ input[type=submit] {
     height: 222px;
     position: absolute;
     border-radius: 50%;
-    margin-left: 83%;
+    margin-left: 87%;
     margin-top: 26%;
 }
 
@@ -854,3 +855,22 @@ img.imageTroc {
             #cssmenu ul ul li:last-child {
                 border: none;
             }
+#Transport{
+    background: white;
+    width: 83%;
+    margin-left: 6%;
+    margin-bottom: 4%;
+    border-radius: 2%;
+    padding: 2%;
+    padding-top: 0%;
+}
+
+#TransportCorp {
+    background-color: rgb(225, 226, 241);
+    width: 83%;
+    margin-left: 6%;
+    margin-bottom: 4%;
+    border-radius: 2%;
+    padding: 2%;
+    padding-top: 0%;
+}
