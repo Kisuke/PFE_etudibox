@@ -124,12 +124,12 @@
                     <li class='last'><a href='Administratif?id=43'><span>Vie Ubifrance, Civiweb</span></a></li>
                 </ul>
             </li>
-            <li class='has-sub'><a href='Administratif?id=5'><span>Transport</span></a>
+            <li class='has-sub'><a href='Menu_Transport'><span>Transport</span></a>
                 <ul>
                     <li><a href='Transport'><span>Carte Imagine R</span></a></li>
-                    <li><a href='Administratif?id=52'><span>Carte Velib</span></a></li>
-                    <li><a href='Administratif?id=53'><span>Abonnement AutoLib</span></a></li>
-                    <li class='last'><a href='Administratif?id=54'><span>SNCF Carte jeune</span></a></li>
+                    <li><a href='Velib'><span>Carte Velib</span></a></li>
+                    <li><a href='Autolib'><span>Abonnement AutoLib</span></a></li>
+                    <li class='last'><a href='SNCF'><span>SNCF Carte jeune</span></a></li>
                 </ul>
             </li>
             <li class='has-sub'><a href='Administratif?id=6'><span>Sécurité sociale</span></a>

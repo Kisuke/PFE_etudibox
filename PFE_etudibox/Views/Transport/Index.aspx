@@ -42,13 +42,33 @@ Le forfait annuel imagine R permet de voyager sur les lignes régulières de tra
  <br /><h2>Contact - SAV</h2>
 
 Agence imagine R 
-46 033 (pour les scolaires) - 66 035 (pour les étudiants) 
-95905 Cergy-Pontoise Cedex 09
-0969 39 55 55 (appel non surtaxé) 
-http://www.imagine-r.com
+<br />46 033 (pour les scolaires) - 66 035 (pour les étudiants) 
+<br/> 95905 Cergy-Pontoise Cedex 09
+<br />Tel : 0969 39 55 55 (appel non surtaxé) 
+<br /><a href="http://www.imagine-r.com" target="_blank" title="Acc&eacute;der au site www.imagine-r.com ">www.imagine-r.com </a><br/>
 
+<p><strong>Service après vente (perte, vol)</strong></p>
 
+<p>Rendez-vous dans les agences commerciales d&#8217;Optile, <a href="http://www.ratp.fr/fr/ratp/c_20993/les-agences-commerciales-ratp-et-sncf/" class='spip_out' rel='external'>de la RATP et de SNCF Transilien</a> ainsi que dans <a href="http://www.ratp.fr/fr/ratp/r_45440/comptoirs-club/" class='spip_out' rel='external'>les comptoirs-clubs de la RATP.</a></p>
+
+<p><a href="http://www.ratp.fr/fr/upload/docs/application/pdf/2011-06/implantation_comptoirs.pdf" class='spip_out' rel='external'>Consultez la carte des comptoirs-clubs RATP</a></p>
+
+<p><a href="IMG/pdf/guide_tarifaire_2014_bat.pdf" class='spip_in' type='application/pdf'>Téléchargez le guide tarifaire du 1er janvier 2014</a></p>
     </div>
+<br />
+    
+<div id='TransportBottomLeft' style= "margin-left : 8%;height:30%;">
+<img src="Styles/Images/download.jpg" style="height: 5%; width: 12%;margin-top:2%;margin-left : 2%"><h3 style ="margin-top:-10% ; margin-left:18%">Les sites utiles</h3>
+<br /><ul><li>Votre contrat et toutes les informations utiles sur
+ <a href="http://www.imagine-r.com/" title="http://www.imagine-r.com">http://www.imagine-r.com</a></li></ul>
+<br /><br /><br /></div>
+    <br />
+
+<div id='TransportBottomRight'style= "margin-left :50%;height:30%;">
+<img src="Styles/Images/info.jpg" style="height: 5%; width: 9%;margin-top:2%;margin-left : 2%"><h3 style ="margin-top:-8% ; margin-left:15%">Comment obtenir sa carte imagine R&nbsp;?</h3>
+<br /><p><strong>Les dossiers d’abonnement sont à retirer </strong> dans les stations et gares de la RATP et de Transilien SNCF, dans les agences commerciales d’OPTILE, de la RATP et de SNCF Transilien et les comptoirs-clubs à Paris et en Île-de-France <a href="http://www.ratp.fr/fr/ratp/c_20993/les-agences-commerciales-ratp-et-sncf" class='spip_out' rel='external'>(toutes les coordonnées)</a></p>	
+</div>
+    <br /><br />
 </asp:Content>
 
 
@@ -56,55 +76,56 @@ http://www.imagine-r.com
     <br/>
     <div id='cssmenu'>
         <ul>
-            <li class='has-sub'><a href='#'><span>Aide</span></a>
+            <li class='has-sub'><a href="Administratif?id=1"><span>Aide</span></a>
                 <ul>
-                    <li><a href='#'><span>Bourses de l'Efrei</span></a></li>
-                    <li><a href='#'><span>Bourses régionales</span></a></li>
-                    <li class='last'><a href='#'><span>Bourses gouvernementales</span></a></li>
+                    <li><a href='Administratif?id=11'><span>Bourses de l'Efrei</span></a></li>
+                    <li><a href='Administratif?id=12'><span>Bourses régionales</span></a></li>
+                    <li class='last'><a href='Administratif?id=13'><span>Bourses gouvernementales</span></a></li>
                 </ul>
             </li>
-            <li class='has-sub'><a href='#'><span>Prêt</span></a>
+            <li class='has-sub'><a href='Administratif?id=2'><span>Prêt</span></a>
                 <ul>
-                    <li><a href='#'><span>Prêt Etudiant</span></a></li>
-                    <li><a href='#'><span>Prêt Permis A 1euros</span></a></li>
-                    <li class='last'><a href='#'><span>Autres Prêts</span></a></li>
+                    <li><a href='Administratif?id=21'><span>Prêt Etudiant</span></a></li>
+                    <li><a href='Administratif?id=22'><span>Prêt Permis A 1euros</span></a></li>
+                    <li class='last'><a href='Administratif?id=23'><span>Autres Prêts</span></a></li>
                 </ul>
             </li>
-            <li><a href='#'><span>Impôt</span></a></li>
-            <li class='has-sub'><a href='#'><span>Stage-VIE</span></a>
+            <li><a href='Administratif?id=3'><span>Impôt</span></a></li>
+            <li class='has-sub'><a href='Administratif?id=4'><span>Stage-VIE</span></a>
                 <ul>
-                    <li><a href='#'><span>Efrei</span></a></li>
-                    <li><a href='#'><span>Créer un profil sur Viadéo, Linkedin, Monster</span></a></li>
-                    <li class='last'><a href='#'><span>Vie Ubifrance, Civiweb</span></a></li>
+                    <li><a href='Administratif?id=41'><span>Efrei</span></a></li>
+                    <li><a href='Administratif?id=42'><span>Créer un profil sur Viadéo, Linkedin, Monster</span></a></li>
+                    <li class='last'><a href='Administratif?id=43'><span>Vie Ubifrance, Civiweb</span></a></li>
                 </ul>
             </li>
-            <li class='has-sub'><a href='#'><span>Transport</span></a>
+            <li class='has-sub'><a href='Menu_Transport'><span>Transport</span></a>
                 <ul>
-                    <li><a href='#'><span>Carte Imagine R</span></a></li>
-                    <li><a href='#'><span>Carte Velib</span></a></li>
-                    <li><a href='#'><span>Abonnement AutoLib</span></a></li>
-                    <li class='last'><a href='#'><span>SNCF Carte jeune</span></a></li>
+                    <li><a href='Transport'><span>Carte Imagine R</span></a></li>
+                    <li><a href='Velib'><span>Carte Velib</span></a></li>
+                    <li><a href='Autolib'><span>Abonnement AutoLib</span></a></li>
+                    <li class='last'><a href='SNCF'><span>SNCF Carte jeune</span></a></li>
                 </ul>
             </li>
-            <li class='has-sub'><a href='#'><span>Sécurité sociale</span></a>
+            <li class='has-sub'><a href='Administratif?id=6'><span>Sécurité sociale</span></a>
                 <ul>
-                    <li><a href='#'><span>SMEREP</span></a></li>
-                    <li class='last'><a href='#'><span>LMDE</span></a></li>
+                    <li><a href='Administratif?id=61'><span>SMEREP</span></a></li>
+                    <li class='last'><a href='Administratif?id=62'><span>LMDE</span></a></li>
                 </ul>
             </li>
-            <li class='has-sub'><a href='#'><span>Logement</span></a>
+            <li class='has-sub'><a href='Administratif?id=7'><span>Logement</span></a>
                 <ul>
-                    <li><a href='#'><span>CAF/APL</span></a></li>
-                    <li class='last'><a href='#'><span>CROUS</span></a></li>
+                    <li><a href='Administratif?id=71'><span>CAF/APL</span></a></li>
+                    <li class='last'><a href='Administratif?id=72'><span>CROUS</span></a></li>
                 </ul>
             </li>
-            <li class='has-sub'><a href='#'><span>Etudiant + de 25 ans</span></a>
+            <li class='has-sub'><a href='Administratif?id=8'><span>Etudiant + de 25 ans</span></a>
                 <ul>
-                    <li><a href='#'><span>Vos droits(CMU,RSA)</span></a></li>
-                    <li class='last'><a href='#'><span>Ce qui va changer</span></a></li>
+                    <li><a href='Administratif?id=81'><span>Vos droits(CMU,RSA)</span></a></li>
+                    <li class='last'><a href='Administratif?id=82'><span>Ce qui va changer</span></a></li>
                 </ul>
             </li>
         </ul>
     </div>
 
 </asp:Content>
+
