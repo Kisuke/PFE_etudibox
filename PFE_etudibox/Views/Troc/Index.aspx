@@ -12,9 +12,8 @@
 </script>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div id="menuTroc">
-        <a href="#">
+        <a href="<%: Url.Action("Create", "Troc")%>">
             <img id="plus" alt="+" src="./Styles/Images/plus.jpg" />
             Ajoutez une annonce</a>
         <form id="Tri" role="checkbox">
@@ -34,12 +33,11 @@
         { %>
     <div id="Troc">
         <h2><%=troc.titleTroc%></h2>
-        <%
+         <%
             if (troc.member.user_id.Equals((String)Session["id"]))
             {%>
-             <a href="#" style="float: right; margin-top: -5%;">
-            <img id="deleteButton" alt="Supprimer" src="./Styles/Images/supprimer-icone.png" /></a>
-         <%}%>
+             <a href="<%: Url.Action("Delete", "Troc", new { id=troc.idTroc})%>" style="float: right; margin-top: -5%;"><img id="deleteButton" alt="Supprimer" src="./Styles/Images/supprimer-icone.png" /></a>
+        <%}%>
         <div class="cat-date">
             <span class="posted">Posté dans: </span>
             <em><a href="Troc?id=<%=troc.idCategoryTroc%>"><%=troc.categoryTroc%></a></em>,

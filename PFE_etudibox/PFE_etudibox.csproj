@@ -228,6 +228,8 @@
     <Content Include="Views\BonPlan\Index.aspx" />
     <Content Include="Views\Autolib\Index.aspx" />
     <Content Include="Views\SNCF\Index.aspx" />
+    <Content Include="Views\Troc\Create.aspx" />
+    <Content Include="Views\Troc\Delete.aspx" />
     <Content Include="Views\Velib\Index.aspx" />
     <Content Include="Views\Inscription\Index.aspx" />
     <Content Include="Views\Logement\Index.aspx" />

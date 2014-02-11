@@ -36,7 +36,7 @@ namespace PFE_etudibox.Models.TrocModel
         {
             //Query to execute 
             string query = "SELECT T.*, USER.eb_user_lastname, USER.eb_user_firstname, USER.eb_user_email, CT.eb_category_troc, SCT.eb_sub_category_troc FROM etudibox.eb_troc AS T LEFT JOIN etudibox.eb_user AS USER ON USER.eb_user_id = T.eb_user_id LEFT JOIN etudibox.eb_category_troc AS CT ON CT.eb_category_troc_id = T.eb_troc_category_id LEFT JOIN etudibox.eb_sub_category_troc AS SCT ON SCT.eb_sub_category_troc_id = T.eb_troc_sub_category_id AND SCT.eb_category_troc_id = CT.eb_category_troc_id";
-            
+
             //On ajoute où non des critères supplémentaires de sélection  à la reqête (catégorie, sous catégorie)
             if (categoryId > 0 && subCategoryId == 0)
             {
@@ -118,7 +118,7 @@ namespace PFE_etudibox.Models.TrocModel
                             break;
                         case 12:
                             subCategory[i] = Convert.ToString(value);
-                            break; 
+                            break;
                         default:
                             break;
                     }
@@ -128,6 +128,12 @@ namespace PFE_etudibox.Models.TrocModel
                 //Reinitialization (à faire)
             }
             return trocList;
+        }
+        public void Delete(int idTroc)
+        {
+            //Query to execute 
+            string query = "DELETE FROM etudibox.eb_troc WHERE id_eb_troc = " + idTroc + " ;";
+            QueryResult dataList = db.Query(query);
         }
     }
 }

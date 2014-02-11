@@ -22,14 +22,14 @@ namespace PFE_etudibox.Controllers.TrocController
                 //Recherche d'un séparateur
                 if (Request.QueryString["id"].Contains(","))
                 {
-                    //On veut lister les bons plans d'une sous-catégorie
+                    //On veut lister les trocs d'une sous-catégorie
                     String[] temp = Request.QueryString["id"].Split(new Char[] { ',' });
                     categoryId = int.Parse(temp[0]);
                     subCategoryId = int.Parse(temp[1]);
                 }
                 else
                 {
-                    //On veut lister les bons plans d'une catégorie
+                    //On veut lister les trocs d'une catégorie
                     categoryId = int.Parse(Request.QueryString["id"]);
                 }
 
@@ -41,10 +41,38 @@ namespace PFE_etudibox.Controllers.TrocController
             //Connection to the database
             bm.Connect();
 
-            //List the bon plan saved in the database
+            //List the troc saved in the database
             List<Troc> trocList = bm.QueryList(categoryId, subCategoryId);
 
             return View(trocList);
+        }
+
+        //
+        // GET: /Troc/Delete
+
+        public ActionResult Delete(String id)
+        {
+            //Call of InscriptionModel 
+            TrocModel bm = new TrocModel();
+
+            //Connection to the database
+            bm.Connect();
+
+            //We parse the String into int
+            int idTroc = int.Parse(id);
+
+            //Delete the Troc in the database
+            bm.Delete(idTroc);
+
+            return View("Delete");
+        }
+
+        //
+        // GET: /Troc/Create
+
+        public ActionResult Create()
+        {
+            return View("Create");
         }
 
     }

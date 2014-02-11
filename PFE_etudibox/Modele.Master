@@ -91,7 +91,7 @@
             <form id="form" runat="server" action="/Signout">
                 <br />
                 <asp:Button ID="Logout" runat="server" Text="Se déconnecter" />
-            </form>
+            </form> 
             <% } %>
             <asp:ContentPlaceHolder ID="LateralContent" runat="server">
             </asp:ContentPlaceHolder>

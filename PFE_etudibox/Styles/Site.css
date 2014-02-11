@@ -1,4 +1,4 @@
-/***********************
+ï»¿/***********************
 *        HTML          *
 ***********************/
 html {
@@ -44,7 +44,7 @@ body {
 }
 
 /**************************
-* Barre latérale : Menu   *
+* Barre latï¿½rale : Menu   *
 **************************/
 #sidebar {
     text-align: center;
@@ -343,7 +343,7 @@ body {
     height: auto;
     margin-bottom: 22%;
     width: 76%;
-    padding-left: 24%;
+    padding-left: 0%;
 }
 
     #inscriptionContent fieldset {
@@ -368,6 +368,10 @@ body {
         font-weight: bold;
         font-style: normal;
         color: #f00;
+    }
+
+     #inscriptionContent h1 {
+        text-align:center;
     }
 
     #inscriptionContent input:focus {
@@ -674,6 +678,58 @@ img.imageBonplan {
             color: orange;
             cursor: pointer;
         }
+
+
+/***********************
+*    CSS de Troc    *
+***********************/
+#menuTroc {
+    background-image: linear-gradient(rgb(254, 254, 254) 14%, rgb(240, 240, 240) 50%, rgb(230, 230, 230) 75%);
+    width: 83%;
+    margin-left: 6%;
+    border-radius: 2%;
+    padding: 2% 2% 2%;
+}
+
+    #menuTroc img {
+        width: 2%;
+    }
+
+    #menuTroc form {
+        float: right;
+        width: 38%;
+        font: 18px Georgia,serif;
+        color: rgb(100, 100, 100);
+    }
+
+    #menuTroc a {
+        font: 18px Georgia, serif;
+        color: #646464;
+        text-decoration: none;
+    }
+
+.styled-select {
+    width: 50%;
+    height: 30px;
+    overflow: hidden;
+    background: url('Images/down_arrow_select.jpg') no-repeat right #ddd;
+    border: 1px solid #ccc;
+    margin-top: -1%;
+    margin-right: 21%;
+}
+
+    .styled-select select {
+        background: transparent;
+        width: 268px;
+        padding: 5px;
+        line-height: 1;
+        border: 0;
+        border-radius: 0;
+        height: 34px;
+        -webkit-appearance: none;
+        font: 18px Georgia, serif;
+        color: #646464;
+    }
 
 
 /****************
